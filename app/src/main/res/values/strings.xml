@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Healthy Baby</string>
+    <string name="healthy_baby">Healthy\nBaby</string>
+    <string name="mulai">Mulai</string>
+    <string name="intro_text">Selamat Datang\nDi Aplikasi\nSistem Monitoring Gizi Bayi</string>
+    <string name="simpan_lanjut"><![CDATA[Simpan & Lanjut]]></string>
+</resources>
