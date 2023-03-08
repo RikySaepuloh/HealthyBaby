@@ -1,13 +1,17 @@
 package id.example.healthybaby
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import id.example.healthybaby.databinding.ActivityLoginBinding
 import id.example.healthybaby.databinding.ActivityWelcomeBinding
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -75,19 +79,19 @@ class LoginActivity : AppCompatActivity() {
                 Log.w(TAG, "Error adding medical record", e)
             }
 
-        val db = Firebase.firestore
-        val userId = "abc123" // Replace with the actual user ID
-        val medicalHistoryRef = db.collection("users").document(userId).collection("medicalHistory")
-
-        medicalHistoryRef.get()
-            .addOnSuccessListener { querySnapshot ->
-                for (document in querySnapshot) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error getting medical history data", e)
-            }
+//        val db = Firebase.firestore
+//        val userId = "abc123" // Replace with the actual user ID
+//        val medicalHistoryRef = db.collection("users").document(userId).collection("medicalHistory")
+//
+//        medicalHistoryRef.get()
+//            .addOnSuccessListener { querySnapshot ->
+//                for (document in querySnapshot) {
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
+//            .addOnFailureListener { e ->
+//                Log.w(TAG, "Error getting medical history data", e)
+//            }
 
     }
 }
