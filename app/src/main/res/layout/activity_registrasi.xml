@@ -7,6 +7,24 @@
     android:background="@color/light_blue"
     tools:context=".RegistrasiActivity">
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:backgroundTint="@android:color/transparent"
+        app:cardElevation="0dp"
+        android:id="@+id/btn_back"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -176,20 +194,28 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/it_jk"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <RadioGroup
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="4"
-                app:boxStrokeColor="@color/text_input_layout_stroke_color">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_jk"
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:buttonTint="@color/white"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/white"
+                    android:text="Laki-Laki"/>
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/white"
+                    android:text="Perempuan"/>
+            </RadioGroup>
         </LinearLayout>
 
     </LinearLayout>
