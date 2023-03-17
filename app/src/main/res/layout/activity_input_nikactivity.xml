@@ -7,6 +7,17 @@
     android:background="@color/light_blue"
     tools:context=".InputNIKActivity">
 
+
+    <TextView
+        android:id="@+id/tv_nama_nakes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_masukkan"
         android:layout_width="wrap_content"
@@ -21,24 +32,26 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_nik"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="48dp"
+        app:boxStrokeColor="@color/text_input_layout_stroke_color"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_masukkan"
-        app:boxStrokeColor="@color/text_input_layout_stroke_color"
-        app:layout_constraintVertical_bias="0.35" >
+        app:layout_constraintVertical_bias="0.35">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_nik"
-            android:textColor="@color/white"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -69,13 +82,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="268dp"
         android:backgroundTint="@color/white"
-        android:text="MASUK"
-        app:cornerRadius="8dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:text="MASUK"
         android:textColor="@color/light_blue"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_registrasi" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logout"
+        android:visibility="invisible"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="LogOut"
+        android:textColor="@color/light_blue"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

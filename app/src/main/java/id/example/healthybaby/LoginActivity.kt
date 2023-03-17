@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
@@ -15,20 +17,35 @@ import java.util.*
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    var tetapMasuk=true
+    var preferences  = Preferences()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        preferences.setPreferences(applicationContext)
+        checkLogin()
 
         binding.btnMasuk.setOnClickListener {
             login(binding.etEmail.text.toString(),binding.etPassword.text.toString())
         }
 
         binding.btnKembali.setOnClickListener {
+            startActivity(Intent(this,IntroductionActivity::class.java))
+            finishAffinity()
+        }
+    }
+
+    private fun checkLogin(){
+        if(preferences.getLogStatus()){
+            val intent =
+                Intent(this, InputNIKActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
+
 
     fun login(email:String,enteredPassword:String){
         val db = FirebaseFirestore.getInstance()
@@ -46,7 +63,11 @@ class LoginActivity : AppCompatActivity() {
                     val userDoc = querySnapshot.documents[0]
                     val user = userDoc.data
                     if (user?.get("password") == enteredPassword) {
+                        preferences.saveLogStatus(true)
+                        preferences.saveNamaNakes(user["nama"] as String?)
+
                         startActivity(Intent(this,InputNIKActivity::class.java))
+                        finishAffinity()
                     // Passwords match, authenticate user
                     } else {
                         // Passwords do not match, reject login attempt
@@ -60,24 +81,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun getHistory(){
-        val db = Firebase.firestore
-        val userId = "abc123" // Replace with the actual user ID
-        val medicalHistoryRef = db.collection("users").document(userId).collection("medicalHistory")
 
-        val newRecord = hashMapOf(
-            "doctorName" to "Dr. Lee",
-            "diagnosis" to "Headache",
-            "treatment" to "Painkillers",
-            "date" to Date()
-        )
-
-        medicalHistoryRef.add(newRecord)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "Medical record added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding medical record", e)
-            }
 
 //        val db = Firebase.firestore
 //        val userId = "abc123" // Replace with the actual user ID

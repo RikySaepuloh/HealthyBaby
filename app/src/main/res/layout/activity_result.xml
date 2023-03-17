@@ -41,7 +41,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="327701030800xxxx"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -64,7 +63,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Gamila Athalla"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -87,7 +85,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Bandung"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -110,7 +107,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="28 Februari 2015"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -134,7 +130,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Perempuan"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
