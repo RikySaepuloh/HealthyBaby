@@ -10,6 +10,7 @@ class Preferences {
     private var log_status = "log_status"
     private var token_type = "token_type"
     private var kelas = "kelas"
+    private var userid = "userid"
     private var idDevice = "id_device"
     private var email = "email"
     private var namaSekolah = "nama_sekolah"
@@ -68,6 +69,11 @@ class Preferences {
 
     fun saveToken(value: String?) {
         spEditor!!.putString(token, value)
+        spEditor!!.commit()
+    }
+
+    fun saveUserID(value: String?) {
+        spEditor!!.putString(userid, value)
         spEditor!!.commit()
     }
 
@@ -225,6 +231,10 @@ class Preferences {
 
     fun getPassword(): String? {
         return sp!!.getString(password, "N/A")
+    }
+
+    fun getUserID(): String? {
+        return sp!!.getString(userid, "N/A")
     }
 
     fun getEmail(): String? {

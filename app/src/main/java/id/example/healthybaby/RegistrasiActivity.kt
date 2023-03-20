@@ -79,23 +79,6 @@ class RegistrasiActivity : AppCompatActivity() {
                 Log.w(ContentValues.TAG, "Error adding medical record", e)
             }
 
-//        val db = Firebase.firestore
-//        val userId = "abc123" // Replace with the actual user ID
-//        val medicalHistoryRef = db.collection("users").document(userId).collection("medicalHistory")
-//
-//        val newRecord = hashMapOf(
-//            "doctorName" to "Dr. Lee",
-//            "diagnosis" to "Headache",
-//            "treatment" to "Painkillers",
-//            "date" to Date()
-//        )
-//
-//        medicalHistoryRef.add(newRecord)
-//            .addOnSuccessListener { documentReference ->
-//                Log.d(ContentValues.TAG, "Medical record added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(ContentValues.TAG, "Error adding medical record", e)
-//            }
+
     }
 }

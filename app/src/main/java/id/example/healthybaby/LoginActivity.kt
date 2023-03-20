@@ -63,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
                     val userDoc = querySnapshot.documents[0]
                     val user = userDoc.data
                     if (user?.get("password") == enteredPassword) {
+                        preferences.saveUserID(userDoc.id)
                         preferences.saveLogStatus(true)
                         preferences.saveNamaNakes(user["nama"] as String?)
 
@@ -80,22 +81,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun getHistory(){
-
-
-//        val db = Firebase.firestore
-//        val userId = "abc123" // Replace with the actual user ID
-//        val medicalHistoryRef = db.collection("users").document(userId).collection("medicalHistory")
-//
-//        medicalHistoryRef.get()
-//            .addOnSuccessListener { querySnapshot ->
-//                for (document in querySnapshot) {
-//                    Log.d(TAG, "${document.id} => ${document.data}")
-//                }
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(TAG, "Error getting medical history data", e)
-//            }
-
-    }
 }
