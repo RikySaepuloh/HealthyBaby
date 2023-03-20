@@ -8,11 +8,18 @@ import id.example.healthybaby.databinding.ActivitySaveBinding
 
 class SaveActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySaveBinding
+    var statusGizi=""
+    var nilaiGizi=""
+    var nilaiTinggi=""
+    var statusTinggi=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
         binding.btnSelanjutnya.setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
             finishAffinity()

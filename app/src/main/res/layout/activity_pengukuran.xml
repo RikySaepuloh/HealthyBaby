@@ -59,7 +59,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_tb"
             android:textColor="@color/white"
-            android:inputType="number"
+            android:inputType="text"
             android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_bb">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_bb"
-            android:inputType="number"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:enabled="false"
             android:textColor="@color/white"

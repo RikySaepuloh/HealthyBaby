@@ -60,12 +60,15 @@ class PengukuranActivity : AppCompatActivity() {
     }
 
     fun getData(){
+
 //        val database = Firebase.database
 //        val myRef = database.getReference("Sensor")
         binding.loading.visibility= View.VISIBLE
         database.child("Sensor").get().addOnSuccessListener {
-            binding.etTb.setText(it.getValue(Sensor::class.java)?.Tinggi.toString())
-            binding.etBb.setText(it.getValue(Sensor::class.java)?.Berat.toString())
+            it.child("Berat").getValue(Double::class.java)
+            binding.etTb.setText(it.child("Tinggi").getValue(Double::class.java).toString())
+            binding.etBb.setText(it.child("Berat").getValue(Double::class.java).toString())
+//            binding.etBb.setText(it.getValue(Sensor::class.java)?.Berat.toString())
             preferences.saveTB(it.getValue(Sensor::class.java)?.Tinggi.toString())
             preferences.saveBB(it.getValue(Sensor::class.java)?.Berat.toString())
             binding.tvTitle.text = "PENGUKURAN BERHASIL"

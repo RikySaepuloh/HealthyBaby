@@ -79,6 +79,7 @@ class InputNIKActivity : AppCompatActivity() {
                     val userDoc = querySnapshot.documents[0]
                     val user = userDoc.data
 
+                    preferences.saveUserID(userDoc.id)
                     preferences.saveNama(user?.get("nama") as String?)
                     preferences.saveNIK(user?.get("NIK") as String?)
                     preferences.saveTempatLahir(user?.get("tempat lahir") as String?)

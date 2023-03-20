@@ -39,9 +39,11 @@
                 android:textSize="14sp"
                 android:text="NIK"/>
             <TextView
+                android:id="@+id/tv_nik"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 />
@@ -61,7 +63,9 @@
                 android:textSize="14sp"
                 android:text="Nama Anak"/>
             <TextView
+                android:id="@+id/tv_nama"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -83,7 +87,9 @@
                 android:textSize="14sp"
                 android:text="Tempat Lahir"/>
             <TextView
+                android:id="@+id/tv_tempat_lahir"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -105,7 +111,9 @@
                 android:textSize="14sp"
                 android:text="Tanggal Lahir"/>
             <TextView
+                android:id="@+id/tv_tanggal_lahir"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -128,7 +136,9 @@
                 android:textSize="14sp"
                 android:text="Jenis Kelamin"/>
             <TextView
+                android:id="@+id/tv_jk"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -150,7 +160,9 @@
                 android:textSize="14sp"
                 android:text="Status Tinggi"/>
             <TextView
+                android:id="@+id/tv_status_tinggi"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -172,9 +184,11 @@
                 android:textSize="14sp"
                 android:text="Status Gizi"/>
             <TextView
+                android:id="@+id/tv_status_gizi"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text=""
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -197,7 +211,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text=""
+                android:text="Baik"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
