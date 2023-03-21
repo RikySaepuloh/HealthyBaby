@@ -3,6 +3,7 @@ package id.example.healthybaby
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import id.example.healthybaby.databinding.ActivityLoginBinding
 import id.example.healthybaby.databinding.ActivityMainBinding
 
@@ -16,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(applicationContext)
 
+        if (preferences.getJenisKelamin() == "Laki-Laki"){
+            Glide.with(this).load(R.drawable.babyboy).into(binding.civProfilFoto)
+        }else{
+            Glide.with(this).load(R.drawable.babygirl).into(binding.civProfilFoto)
+        }
+
         binding.btnBack.setOnClickListener{
             finish()
         }
@@ -26,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnUkur.setOnClickListener {
             startActivity(Intent(this,PengukuranActivity::class.java))
+        }
+
+        binding.btnRiwayat.setOnClickListener {
+            startActivity(Intent(this,RiwayatActivity::class.java))
         }
     }
 }

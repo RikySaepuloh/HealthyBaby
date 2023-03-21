@@ -29,7 +29,6 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_profil_foto"
         android:layout_width="75dp"
-        android:src="@drawable/bayi"
         android:layout_marginTop="120dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintTop_toTopOf="parent"
