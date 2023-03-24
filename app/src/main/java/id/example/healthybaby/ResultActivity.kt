@@ -65,6 +65,16 @@ class ResultActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val userId = preferences.getUserID() // Replace with the actual user ID
         val medicalHistoryRef = userId?.let { db.collection("bayi").document(it).collection("medicalHistory") }
+        var loggedas=""
+        var nama=""
+        if (preferences.getLoggedAs() == "Dokter" || preferences.getLoggedAs() == "Kader"){
+            loggedas = preferences.getLoggedAs().toString()
+            nama = preferences.getNamaNakes().toString()
+        }else{
+            loggedas = preferences.getLoggedAs().toString()
+            nama = "-"
+        }
+
 
         val newRecord = hashMapOf(
             "tinggi badan" to preferences.getTB()!!.toDouble(),
@@ -78,6 +88,8 @@ class ResultActivity : AppCompatActivity() {
             "mp-asi 3" to preferences.getJenis3(),
             "frekuensi" to preferences.getFrekuensi(),
             "hasil mp-asi" to preferences.getHasilJenis(),
+            "pic" to nama,
+            "hakakses" to loggedas,
             "date" to dateTodaddmmyyy()
         )
 
@@ -101,6 +113,30 @@ class ResultActivity : AppCompatActivity() {
         binding.tvTanggalLahir.text = preferences.getTanggalLahir()
         binding.tvStatusGizi.text = statusGizi
         binding.tvStatusTinggi.text = statusTinggi
+
+        when (statusTinggi) {
+            "Sangat Pendek", "Sangat Tinggi" -> {
+                binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.red))
+            }
+            "Pendek", "Tinggi" -> {
+                binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
+            }
+            else -> {
+                binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.green))
+            }
+        }
+
+        when (statusGizi) {
+            "Sangat Obesitas", "Sangat Kurus" -> {
+                binding.tvStatusGizi.setTextColor(ContextCompat.getColor(this,R.color.red))
+            }
+            "Obesitas", "Kurus" -> {
+                binding.tvStatusGizi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
+            }
+            else -> {
+                binding.tvStatusGizi.setTextColor(ContextCompat.getColor(this,R.color.green))
+            }
+        }
     }
 
 

@@ -23,7 +23,6 @@ class IntroductionActivity : AppCompatActivity() {
         }
 
         binding.btnNakes.setOnClickListener {
-            preferences.saveLoggedAs("Nakes")
             startActivity(Intent(this,LoginActivity::class.java))
         }
     }

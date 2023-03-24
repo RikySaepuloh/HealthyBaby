@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
                         preferences.saveUserID(userDoc.id)
                         preferences.saveLogStatus(true)
                         preferences.saveNamaNakes(user["nama"] as String?)
+                        preferences.saveLoggedAs(user["hakakses"] as String?)
 
                         startActivity(Intent(this,InputNIKActivity::class.java))
                         finishAffinity()

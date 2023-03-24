@@ -45,6 +45,8 @@ class DetailRiwayatActivity : AppCompatActivity() {
 
                 binding.tvTb.text = mydata?.get("tinggi badan").toString()
                 binding.tvBb.text = mydata?.get("berat badan").toString()
+                binding.tvPic.text = mydata?.get("pic").toString()
+                binding.tvJabPic.text = mydata?.get("hakakses").toString()
 
                 val statusGizi = mydata?.get("status gizi").toString()
                 when (statusGizi) {

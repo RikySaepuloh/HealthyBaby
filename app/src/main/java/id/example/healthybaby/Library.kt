@@ -38,7 +38,7 @@ fun dateTodayyymmdd(): String {
 }
 
 fun dateTodaddmmyyy(): String {
-    return SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+    return SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
 }
 
 fun getMonthFromBirthdate(tanggalLahir: String?): Int {

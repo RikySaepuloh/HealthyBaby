@@ -21,7 +21,7 @@ class InputNIKActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(applicationContext)
 
-        if (preferences.getLoggedAs() == "Nakes") {
+        if (preferences.getLoggedAs() == "Dokter" || preferences.getLoggedAs() == "Kader") {
             ucapanSelamat()
             binding.btnLogout.visibility = View.VISIBLE
         }
