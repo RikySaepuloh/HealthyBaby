@@ -21,6 +21,10 @@ class RiwayatActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(applicationContext)
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         binding.rvRiwayat.apply {
             layoutManager = LinearLayoutManager(this@RiwayatActivity)
             adapter = myadapter

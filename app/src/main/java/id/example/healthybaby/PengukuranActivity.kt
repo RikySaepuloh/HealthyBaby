@@ -35,8 +35,8 @@ class PengukuranActivity : AppCompatActivity() {
         getData()
 
         binding.btnSelanjutnya.setOnClickListener {
-            startActivity(Intent(this,ResultActivity::class.java))
-//            startActivity(Intent(this,ProsesActivity::class.java))
+//            startActivity(Intent(this,ResultActivity::class.java))
+            startActivity(Intent(this,ProsesActivity::class.java))
         }
 
         binding.btnUlangi.setOnClickListener {

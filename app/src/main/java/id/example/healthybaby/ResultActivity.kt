@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.example.healthybaby.databinding.ActivityResultBinding
@@ -26,6 +27,7 @@ class ResultActivity : AppCompatActivity() {
 
         statusGizi()
         statusTinggi()
+        statusMPAsi()
 
         binding.btnSimpan.setOnClickListener {
             saveResult()
@@ -43,6 +45,22 @@ class ResultActivity : AppCompatActivity() {
 
     }
 
+    fun statusMPAsi(){
+        var hasiljenis = preferences.getHasilJenis()
+        binding.tvMpAsi.text = hasiljenis
+        when (hasiljenis) {
+            "Kurang" -> {
+                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.red))
+            }
+            "Cukup" -> {
+                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
+            }
+            else -> {
+                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.green))
+            }
+        }
+    }
+
     fun saveResult(){
         val db = Firebase.firestore
         val userId = preferences.getUserID() // Replace with the actual user ID
@@ -55,6 +73,11 @@ class ResultActivity : AppCompatActivity() {
             "status tinggi" to statusTinggi,
             "nilai tinggi" to nilaiTinggi.toDouble(),
             "nilai gizi" to nilaiGizi.toDouble(),
+            "mp-asi 1" to preferences.getJenis1(),
+            "mp-asi 2" to preferences.getJenis2(),
+            "mp-asi 3" to preferences.getJenis3(),
+            "frekuensi" to preferences.getFrekuensi(),
+            "hasil mp-asi" to preferences.getHasilJenis(),
             "date" to dateTodaddmmyyy()
         )
 

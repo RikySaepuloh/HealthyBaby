@@ -13,11 +13,16 @@ class Preferences {
     private var userid = "userid"
     private var idDevice = "id_device"
     private var email = "email"
+    private var frekuensi = "frekuensi"
     private var namaSekolah = "nama_sekolah"
     private var jenis_kelamin = "jenis_kelamin"
     private var nama = "nama"
     private var tb = "tb"
     private var bb = "bb"
+    private var jenis1 = "jenis1"
+    private var jenis2 = "jenis2"
+    private var jenis3 = "jenis3"
+    private var hasiljenis = "hasiljenis"
     private var nama_nakes = "nama_nakes"
     private var tanggal_lahir = "tanggal_lahir"
     private var tempat_lahir = "tempat_lahir"
@@ -69,6 +74,31 @@ class Preferences {
 
     fun saveToken(value: String?) {
         spEditor!!.putString(token, value)
+        spEditor!!.commit()
+    }
+
+    fun saveFrekuensi(value: String?) {
+        spEditor!!.putString(frekuensi, value)
+        spEditor!!.commit()
+    }
+
+    fun saveHasilJenis(value: String?) {
+        spEditor!!.putString(hasiljenis, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis1(value: String?) {
+        spEditor!!.putString(jenis1, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis2(value: String?) {
+        spEditor!!.putString(jenis2, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis3(value: String?) {
+        spEditor!!.putString(jenis3, value)
         spEditor!!.commit()
     }
 
@@ -192,6 +222,10 @@ class Preferences {
         return sp!!.getString(expires, "N/A")
     }
 
+    fun getFrekuensi(): String? {
+        return sp!!.getString(frekuensi, "N/A")
+    }
+
     fun getTB(): String? {
         return sp!!.getString(tb, "N/A")
     }
@@ -211,6 +245,22 @@ class Preferences {
 
     fun getTanggalLahir(): String? {
         return sp!!.getString(tanggal_lahir, "N/A")
+    }
+
+    fun getJenis1(): String? {
+        return sp!!.getString(jenis1, "N/A")
+    }
+
+    fun getHasilJenis(): String? {
+        return sp!!.getString(hasiljenis, "N/A")
+    }
+
+    fun getJenis2(): String? {
+        return sp!!.getString(jenis2, "N/A")
+    }
+
+    fun getJenis3(): String? {
+        return sp!!.getString(jenis3, "N/A")
     }
 
     fun getTempatLahir(): String? {

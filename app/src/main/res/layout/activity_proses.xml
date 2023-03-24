@@ -28,21 +28,41 @@
             android:text="Frekuensi\nMP-ASI"
             android:textColor="@color/white" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/il_frekuensi"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            app:boxStrokeColor="@color/text_input_layout_stroke_color">
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="@android:color/transparent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_frekuensi"
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinner"
+                app:ms_hint="Pilih Frekuensi"
+                app:ms_hint_color="@color/white"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="16" />
-        </com.google.android.material.textfield.TextInputLayout>
+                app:ms_text_color="@color/white"
+                app:ms_background_color="@color/light_blue"
+                app:ms_arrow_tint="@color/white"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/il_frekuensi"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="5"-->
+<!--            app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/et_frekuensi"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="16" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
             android:layout_width="0dp"
@@ -61,6 +81,7 @@
         android:layout_marginTop="36dp"
         android:orientation="horizontal"
         android:weightSum="8"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -80,62 +101,139 @@
             android:layout_weight="6"
             android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/il_jenis"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/text_input_layout_stroke_color">
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_jenis"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="16" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_text_color="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_arrow_tint="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/il_jenis"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_jenis"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="16" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="16" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
                 android:layout_marginTop="24dp"
-                app:boxStrokeColor="@color/text_input_layout_stroke_color">
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="16" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_text_color="@color/white"
+                    app:ms_hint_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
                 android:layout_marginTop="24dp"
-                app:boxStrokeColor="@color/text_input_layout_stroke_color">
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="16" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_text_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:boxStrokeColor="@color/text_input_layout_stroke_color">
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:strokeColor="@color/white"-->
+<!--                app:strokeWidth="1dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                app:cardCornerRadius="8dp"-->
+<!--                android:backgroundTint="@android:color/transparent">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="16" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
+<!--                    android:id="@+id/et_jenis4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    app:ms_background_color="@android:color/transparent"-->
+<!--                    app:ms_arrow_tint="@color/white"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="16" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="16" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
         </LinearLayout>
 

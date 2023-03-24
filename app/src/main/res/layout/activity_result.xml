@@ -209,9 +209,9 @@
                 android:textSize="14sp"
                 android:text="Status MP-ASI"/>
             <TextView
+                android:id="@+id/tv_mp_asi"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Baik"
                 android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

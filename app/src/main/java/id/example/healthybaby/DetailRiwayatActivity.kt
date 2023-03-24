@@ -35,6 +35,9 @@ class DetailRiwayatActivity : AppCompatActivity() {
         val userId=preferences.getUserID()
         val medicalHistoryRef = userId?.let { db.collection("bayi").document(it).collection("medicalHistory").document(id) }
 
+        binding.tvNama.text = preferences.getNama()
+        binding.tvNik.text = preferences.getNIK()
+
         medicalHistoryRef?.get()!!.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val querySnapshot = task.result
@@ -72,6 +75,25 @@ class DetailRiwayatActivity : AppCompatActivity() {
                     else -> {
                         binding.tvStatusTinggi.text = statusTinggi
                         binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.green))
+                    }
+                }
+
+                binding.tvMpAsi1.text = mydata.get("mp-asi 1").toString()
+                binding.tvMpAsi2.text = mydata.get("mp-asi 2").toString()
+                binding.tvMpAsi3.text = mydata.get("mp-asi 3").toString()
+
+                val hasiljenis = mydata.get("hasil mp-asi").toString()
+
+                binding.tvStatusMpasi.text = hasiljenis
+                when (hasiljenis) {
+                    "Kurang" -> {
+                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.red))
+                    }
+                    "Cukup" -> {
+                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
+                    }
+                    else -> {
+                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.green))
                     }
                 }
 
