@@ -16,17 +16,19 @@ import java.util.*
 
 class RegistrasiActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistrasiBinding
+    val preferences=Preferences()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrasiBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        preferences.setPreferences(this)
 
         binding.btnBack.setOnClickListener {
             finish()
         }
 
-        binding.itTglLahir.setOnClickListener {
+        binding.etTglLahir.setOnClickListener {
             val datePicker =
                 MaterialDatePicker.Builder.datePicker()
                     .setTitleText("Pilih Tanggal Lahir")
@@ -68,10 +70,18 @@ class RegistrasiActivity : AppCompatActivity() {
             "jenis kelamin" to jk
         )
 
+
+
         medicalHistoryRef.add(newRecord)
             .addOnSuccessListener { documentReference ->
                 Log.d(ContentValues.TAG, "Medical record added with ID: ${documentReference.id}")
                 Toast.makeText(this,"Registrasi Berhasil!",Toast.LENGTH_LONG).show()
+                preferences.saveUserID(documentReference.id)
+                preferences.saveNama(nama)
+                preferences.saveNIK(nik)
+                preferences.saveTempatLahir(tempat_lahir)
+                preferences.saveTanggalLahir(tgl_lahir)
+                preferences.saveJenisKelamin(jk)
                 startActivity(Intent(this,MainActivity::class.java))
                 finishAffinity()
             }
