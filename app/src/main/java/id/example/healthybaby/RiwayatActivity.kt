@@ -2,6 +2,7 @@ package id.example.healthybaby
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
@@ -71,23 +72,73 @@ class RiwayatActivity : AppCompatActivity() {
         options.plotOptions = plotoptions
 
 
-        val tinggibadan = arrayListOf<Double>()
-        val beratbadan = arrayListOf<Double>()
-        val nilaitinggi = arrayListOf<Double>()
-        val nilaigizi = arrayListOf<Double>()
+        val tinggibadan = ArrayList<Double>()
+        val beratbadan = ArrayList<Double>()
+        val nilaitinggi = ArrayList<Double>()
+        val nilaigizi = ArrayList<Double>()
+        val tanggal = ArrayList<String>()
 
         medicalHistoryRef?.get()!!.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val querySnapshot = task.result
                 val mydata = querySnapshot.documents
                 for (i in 0 until mydata.size){
-                    mydata[i].getDouble("tinggi badan")?.let { tinggibadan.add(it) }
-                    mydata[i].getDouble("berat badan")?.let { beratbadan.add(it) }
-                    mydata[i].getDouble("nilai gizi")?.let { nilaigizi.add(it) }
-                    mydata[i].getDouble("nilai tinggi")?.let { nilaitinggi.add(it) }
+                    tanggal.add(mydata[i].data?.get("date").toString())
+                    tinggibadan.add(mydata[i].data?.get("tinggi badan").toString().toDouble())
+                    beratbadan.add(mydata[i].data?.get("berat badan").toString().toDouble())
+                    nilaitinggi.add(mydata[i].data?.get("nilai tinggi").toString().toDouble())
+                    nilaigizi.add(mydata[i].data?.get("nilai gizi").toString().toDouble())
                 }
                 Log.d("myhealthy", mydata.toString())
                 myadapter.initData(mydata)
+
+                val xaxisData = tanggal
+                val xaxis = HIXAxis().apply {
+                    categories = xaxisData
+                }
+                options.xAxis = arrayListOf(xaxis)
+
+                val line1 = HILine()
+                line1.name = "Tinggi Badan"
+                line1.data = tinggibadan
+
+                val line2 = HILine()
+                line2.name = "Berat Badan"
+                line2.data =beratbadan
+
+                val line3 = HILine()
+                line3.name = "Nilai Gizi"
+                line3.data =nilaigizi
+
+                val line4 = HILine()
+                line4.name = "Nilai Tinggi"
+                line4.data = nilaitinggi
+
+                val responsive = HIResponsive()
+
+                val rules1 = HIRules()
+                rules1.condition = HICondition()
+                rules1.condition.maxWidth = 500
+                val chartLegend: HashMap<String, HashMap<String,String>> = HashMap()
+                val legendOptions: HashMap<String, String> = HashMap()
+                legendOptions["layout"] = "horizontal"
+                legendOptions["align"] = "center"
+                legendOptions["verticalAlign"] = "bottom"
+                chartLegend["legend"] = legendOptions
+                rules1.chartOptions = chartLegend
+                responsive.rules = arrayListOf(rules1)
+                options.responsive = responsive
+                options.credits = HICredits().apply {
+                    enabled = false
+                }
+                options.exporting = HIExporting().apply {
+                    enabled = false
+                }
+                options.series = arrayListOf(line1, line2, line3, line4)
+
+                binding.hc.options = options
+
+                binding.hc.setWillNotDraw(false)
 //                mydata
 //                if (querySnapshot.isEmpty) {
 //                    Toast.makeText(this,"Akun tidak ditemukan!", Toast.LENGTH_LONG).show()
@@ -113,47 +164,7 @@ class RiwayatActivity : AppCompatActivity() {
             }
         }
 
-        val line1 = HILine()
-        line1.name = "Tinggi Badan"
-        line1.data = arrayListOf(10,20,30,40.5,50.5,60.2)
 
-        val line2 = HILine()
-        line2.name = "Berat Badan"
-        line2.data =beratbadan
-
-        val line3 = HILine()
-        line3.name = "Nilai Gizi"
-        line3.data =nilaigizi
-
-        val line4 = HILine()
-        line4.name = "Nilai Tinggi"
-        line4.data = nilaitinggi
-
-        val responsive = HIResponsive()
-
-        val rules1 = HIRules()
-        rules1.condition = HICondition()
-        rules1.condition.maxWidth = 500
-        val chartLegend: HashMap<String, HashMap<String,String>> = HashMap()
-        val legendOptions: HashMap<String, String> = HashMap()
-        legendOptions["layout"] = "horizontal"
-        legendOptions["align"] = "center"
-        legendOptions["verticalAlign"] = "bottom"
-        chartLegend["legend"] = legendOptions
-        rules1.chartOptions = chartLegend
-        responsive.rules = arrayListOf(rules1)
-        options.responsive = responsive
-        options.credits = HICredits().apply {
-            enabled = false
-        }
-        options.exporting = HIExporting().apply {
-            enabled = false
-        }
-        options.series = arrayListOf(line1, line2, line3, line4)
-
-        binding.hc.options = options
-
-        binding.hc.setWillNotDraw(false)
     }
 
 }
