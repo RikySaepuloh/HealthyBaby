@@ -8,6 +8,7 @@ class Preferences {
     var APP_NAME = R.string.app_name
 
     private var log_status = "log_status"
+    private var input_status = "input_status"
     private var token_type = "token_type"
     private var kelas = "kelas"
     private var userid = "userid"
@@ -22,6 +23,7 @@ class Preferences {
     private var jenis1 = "jenis1"
     private var jenis2 = "jenis2"
     private var jenis3 = "jenis3"
+    private var jenis4 = "jenis4"
     private var hasiljenis = "hasiljenis"
     private var nama_nakes = "nama_nakes"
     private var tanggal_lahir = "tanggal_lahir"
@@ -67,6 +69,11 @@ class Preferences {
         spEditor!!.commit()
     }
 
+    fun saveInputStatus(value: Boolean) {
+        spEditor!!.putBoolean(input_status, value)
+        spEditor!!.commit()
+    }
+
     fun saveSaveData(value: Boolean) {
         spEditor!!.putBoolean(saveData, value)
         spEditor!!.commit()
@@ -99,6 +106,11 @@ class Preferences {
 
     fun saveJenis3(value: String?) {
         spEditor!!.putString(jenis3, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis4(value: String?) {
+        spEditor!!.putString(jenis4, value)
         spEditor!!.commit()
     }
 
@@ -206,6 +218,10 @@ class Preferences {
         return sp!!.getBoolean(log_status, false)
     }
 
+    fun getInputStatus(): Boolean {
+        return sp!!.getBoolean(input_status, false)
+    }
+
     fun getFingerprintState(): Boolean {
         return sp!!.getBoolean(fingerprint, false)
     }
@@ -261,6 +277,10 @@ class Preferences {
 
     fun getJenis3(): String? {
         return sp!!.getString(jenis3, "N/A")
+    }
+
+    fun getJenis4(): String? {
+        return sp!!.getString(jenis4, "N/A")
     }
 
     fun getTempatLahir(): String? {

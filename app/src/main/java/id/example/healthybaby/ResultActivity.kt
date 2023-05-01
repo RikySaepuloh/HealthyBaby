@@ -14,6 +14,7 @@ import java.util.*
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
     var preferences = Preferences()
+    var imt=0.0
     var statusGizi=""
     var nilaiGizi=""
     var nilaiTinggi=""
@@ -24,7 +25,8 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         preferences.setPreferences(applicationContext)
-
+        val usia = getMonthFromBirthdate(preferences.getTanggalLahir())
+        binding.tvUsia.text = "$usia bulan"
         statusGizi()
         statusTinggi()
         statusMPAsi()
@@ -44,6 +46,7 @@ class ResultActivity : AppCompatActivity() {
         showData()
 
     }
+
 
     fun statusMPAsi(){
         var hasiljenis = preferences.getHasilJenis()
@@ -88,6 +91,7 @@ class ResultActivity : AppCompatActivity() {
             "mp-asi 3" to preferences.getJenis3(),
             "frekuensi" to preferences.getFrekuensi(),
             "hasil mp-asi" to preferences.getHasilJenis(),
+            "imt" to imt,
             "pic" to nama,
             "hakakses" to loggedas,
             "date" to dateTodaddmmyyy()
@@ -113,7 +117,11 @@ class ResultActivity : AppCompatActivity() {
         binding.tvTanggalLahir.text = preferences.getTanggalLahir()
         binding.tvStatusGizi.text = statusGizi
         binding.tvStatusTinggi.text = statusTinggi
-
+        binding.tvTb.text = preferences.getTB()
+        binding.tvBb.text = preferences.getBB()
+        binding.tvStatusTinggi.text = statusTinggi
+        imt = preferences.getTB()!!.toDouble() / (preferences.getBB()!!.toDouble() * preferences.getBB()!!.toDouble())
+        binding.tvImt.text = imt.toString()
         when (statusTinggi) {
             "Sangat Pendek", "Sangat Tinggi" -> {
                 binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.red))

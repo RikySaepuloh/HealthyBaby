@@ -190,7 +190,29 @@
                     android:layout_height="wrap_content"/>
             </com.google.android.material.card.MaterialCardView>
 
-<!--            <com.google.android.material.card.MaterialCardView-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mc_jenis4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                android:visibility="gone"
+                android:backgroundTint="@android:color/transparent">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis4"
+                    android:layout_width="match_parent"
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_text_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--            <com.google.android.material.card.MaterialCardView-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                app:strokeColor="@color/white"-->

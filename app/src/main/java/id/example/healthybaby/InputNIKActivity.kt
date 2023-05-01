@@ -21,6 +21,8 @@ class InputNIKActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(applicationContext)
 
+        checkInput()
+
         if (preferences.getLoggedAs() == "Dokter" || preferences.getLoggedAs() == "Kader") {
             ucapanSelamat()
             binding.btnLogout.visibility = View.VISIBLE
@@ -38,6 +40,12 @@ class InputNIKActivity : AppCompatActivity() {
             preferences.preferencesLogout()
             startActivity(Intent(this,LoginActivity::class.java))
             finishAffinity()
+        }
+    }
+
+    fun checkInput(){
+        if (preferences.getInputStatus()){
+            startActivity(Intent(this,MainActivity::class.java))
         }
     }
 
@@ -80,21 +88,14 @@ class InputNIKActivity : AppCompatActivity() {
                     val user = userDoc.data
 
                     preferences.saveUserID(userDoc.id)
+                    preferences.saveInputStatus(true)
                     preferences.saveNama(user?.get("nama") as String?)
                     preferences.saveNIK(user?.get("NIK") as String?)
                     preferences.saveTempatLahir(user?.get("tempat lahir") as String?)
                     preferences.saveTanggalLahir(user?.get("tanggal lahir") as String?)
                     preferences.saveJenisKelamin(user?.get("jenis kelamin") as String?)
 
-//                    Toast.makeText(this,"Ditemukan",Toast.LENGTH_LONG).show()
                     startActivity(Intent(this,MainActivity::class.java))
-//                    if (user?.get("password") == enteredPassword) {
-//                        startActivity(Intent(this,InputNIKActivity::class.java))
-//                        // Passwords match, authenticate user
-//                    } else {
-//                        // Passwords do not match, reject login attempt
-//                        Toast.makeText(this,"Username atau Password anda salah!", Toast.LENGTH_LONG).show()
-//                    }
                 }
             } else {
                 Log.e("LoginActivity", "Error retrieving user document:", task.exception)

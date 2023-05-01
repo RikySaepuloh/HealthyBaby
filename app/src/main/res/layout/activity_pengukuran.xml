@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+
     tools:context=".PengukuranActivity">
 
     <ProgressBar
@@ -13,7 +13,7 @@
         style="@android:style/Widget.Material.Light.ProgressBar.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/white"
+        android:indeterminateTint="@color/light_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:text="MOHON TUNGGU"
+        android:textColor="@color/light_blue"
+        android:text="Pengukuran"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,91 +37,131 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tinggi Badan :"
-        android:textColor="@color/white"
+
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/ti_tb"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="48dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_tb"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_tb"
+    <LinearLayout
+        android:id="@+id/layout_tb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:orientation="horizontal"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:boxStrokeColor="@color/text_input_layout_stroke_color"
         app:layout_constraintVertical_bias="0.35" >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_tb"
-            android:textColor="@color/white"
-            android:inputType="text"
-            android:enabled="false"
-            android:layout_width="match_parent"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_tb"
+            android:layout_width="0dp"
+            android:layout_weight="3"
             android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/light_blue"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_tb"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cek_tb"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            app:backgroundTint="@color/light_blue"
+            android:textColor="@color/white"
+            android:text="Cek"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_bb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/ti_tb"
+        app:layout_constraintTop_toBottomOf="@id/layout_tb"
         android:layout_marginTop="48dp"
+        android:layout_marginStart="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="Berat Badan :"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_bb"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        app:boxStrokeColor="@color/text_input_layout_stroke_color"
+        android:weightSum="4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bb">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_bb"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:enabled="false"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_ulangi"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:textAllCaps="false"
-        android:textColor="@color/light_blue"
-        android:layout_marginStart="24dp"
-        android:backgroundTint="@color/white"
-        android:text="Ulangi"
-        android:insetTop="0dp"
-        app:cornerRadius="8dp"
-        android:insetBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_bb"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            app:boxStrokeColor="@color/light_blue">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_bb"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cek_bb"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+
+            android:textColor="@color/white"
+            android:text="Cek"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_ulangi"-->
+<!--        android:layout_width="125dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="28dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/light_blue"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:text="Ulangi"-->
+<!--        android:insetTop="0dp"-->
+<!--        app:cornerRadius="8dp"-->
+<!--        android:insetBottom="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_selanjutnya"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/light_blue"
+        android:backgroundTint="@color/light_blue"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         app:cornerRadius="8dp"
         android:layout_marginEnd="24dp"
