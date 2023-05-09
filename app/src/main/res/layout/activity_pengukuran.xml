@@ -36,7 +36,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tinggi Badan :"
+        android:text="Panjang Badan :"
 
         android:textSize="18sp"
         android:layout_marginStart="48dp"
