@@ -120,7 +120,7 @@ class ResultActivity : AppCompatActivity() {
         binding.tvTb.text = preferences.getTB()
         binding.tvBb.text = preferences.getBB()
         binding.tvStatusTinggi.text = statusTinggi
-        imt = preferences.getTB()!!.toDouble() / (preferences.getBB()!!.toDouble() * preferences.getBB()!!.toDouble())
+        imt = preferences.getBB()!!.toDouble() / (preferences.getTB()!!.toDouble() * preferences.getTB()!!.toDouble())
         binding.tvImt.text = imt.toString()
         when (statusTinggi) {
             "Sangat Pendek", "Sangat Tinggi" -> {
