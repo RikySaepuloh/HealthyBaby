@@ -33,6 +33,8 @@ class PengukuranActivity : AppCompatActivity() {
         preferences.setPreferences(applicationContext)
 
         binding.btnSelanjutnya.setOnClickListener {
+            preferences.saveBB(binding.etBb.text.toString())
+            preferences.saveTB(binding.etTb.text.toString())
             startActivity(Intent(this,ProsesActivity::class.java))
         }
 
@@ -70,7 +72,6 @@ class PengukuranActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 binding.etBb.setText(bb)
             }
-            preferences.saveBB(it.getValue(Sensor::class.java)?.Berat.toString())
             binding.tvTitle.text = "PENGUKURAN BERHASIL"
             binding.loading.visibility= View.GONE
             Snackbar.make(binding.root,"Data berhasil diperbarui",Snackbar.LENGTH_LONG).show()
@@ -90,7 +91,6 @@ class PengukuranActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 binding.etTb.setText(tb)
             }
-            preferences.saveTB(it.getValue(Sensor::class.java)?.Tinggi.toString())
             binding.tvTitle.text = "PENGUKURAN BERHASIL"
             binding.loading.visibility= View.GONE
             Snackbar.make(binding.root,"Data berhasil diperbarui",Snackbar.LENGTH_LONG).show()

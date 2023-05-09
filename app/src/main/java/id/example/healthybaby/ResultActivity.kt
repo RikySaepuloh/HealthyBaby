@@ -120,8 +120,11 @@ class ResultActivity : AppCompatActivity() {
         binding.tvTb.text = preferences.getTB()
         binding.tvBb.text = preferences.getBB()
         binding.tvStatusTinggi.text = statusTinggi
-        imt = preferences.getBB()!!.toDouble() / (preferences.getTB()!!.toDouble() * preferences.getTB()!!.toDouble())
-        binding.tvImt.text = imt.toString()
+        val berat = preferences.getBB()!!.toDouble()
+        val panjang = preferences.getTB()!!.toDouble()
+        imt = berat/(panjang*panjang)
+//        imt = preferences.getBB()!!.toDouble() / (preferences.getTB()!!.toDouble() * preferences.getTB()!!.toDouble())
+        binding.tvImt.text = imt.toString().substringBefore(".") + "." + imt.toString().substringAfter(".").substring(0,1)
         when (statusTinggi) {
             "Sangat Pendek", "Sangat Tinggi" -> {
                 binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.red))
