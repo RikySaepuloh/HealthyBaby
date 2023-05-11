@@ -182,7 +182,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Tinggi Badan"/>
+                    android:text="Panjang Badan"/>
 
                 <TextView
                     android:id="@+id/tv_tb"
@@ -221,6 +221,28 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="12dp"
                 android:background="@color/light_blue"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:weightSum="2">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="IMT"/>
+
+                <TextView
+                    android:id="@+id/tv_imt"
+                    android:gravity="end"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

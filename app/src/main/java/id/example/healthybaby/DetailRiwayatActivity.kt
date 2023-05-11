@@ -101,6 +101,7 @@ class DetailRiwayatActivity : AppCompatActivity() {
 
                 binding.tvNilaiGizi.text = mydata["nilai gizi"].toString()
                 binding.tvNilaiTinggi.text = mydata["nilai tinggi"].toString()
+                binding.tvImt.text = mydata["imt"].toString()
                 binding.tvTanggal.text = mydata["date"].toString()
 
 //                Log.d("myhealthy", mydata.toString())

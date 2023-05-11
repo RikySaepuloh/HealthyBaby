@@ -122,8 +122,7 @@ class ResultActivity : AppCompatActivity() {
         binding.tvStatusTinggi.text = statusTinggi
         val berat = preferences.getBB()!!.toDouble()
         val panjang = preferences.getTB()!!.toDouble()
-        imt = berat/(panjang*panjang)
-//        imt = preferences.getBB()!!.toDouble() / (preferences.getTB()!!.toDouble() * preferences.getTB()!!.toDouble())
+        imt = berat/((panjang/100)*(panjang/100))
         binding.tvImt.text = imt.toString().substringBefore(".") + "." + imt.toString().substringAfter(".").substring(0,1)
         when (statusTinggi) {
             "Sangat Pendek", "Sangat Tinggi" -> {
@@ -152,14 +151,10 @@ class ResultActivity : AppCompatActivity() {
 
 
     fun statusGizi(){
-//        val day = preferences.getTanggalLahir()?.substringBefore("/")?.toInt()
-//        val month = preferences.getTanggalLahir()?.substringAfter("/")?.substringBefore("/")?.toInt()
-//        val year = preferences.getTanggalLahir()?.substringAfterLast("/")?.toInt()
-//        val usia = day?.let { month?.let { it1 -> year?.let { it2 -> getAge(it, it1, it2) } } }!!.toInt()
         val usia = getMonthFromBirthdate(preferences.getTanggalLahir())
         val berat = preferences.getBB()!!.toDouble()
         val panjang = preferences.getTB()!!.toDouble()
-        val imt = berat/(panjang*panjang)
+        imt = berat/((panjang/100)*(panjang/100))
         if (preferences.getJenisKelamin() == "Laki-Laki"){
             val median = arrayListOf(17.3,17.3,17.3,17.2,17.0,16.9,16.8,16.7,16.6,16.4,16.3,16.3,16.2,16.1,16.1,16.0,15.9,15.8,15.8,15.7)
             val sd2min = arrayListOf(14.7,14.8,14.7,14.7,14.6,14.5,14.4,14.3,14.2,14.1,14.0,13.9,13.9,13.8,13.7,13.7,13.6,13.6,13.6)
@@ -219,7 +214,11 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun statusTinggi(){
-        val usia = getMonthFromBirthdate(preferences.getTanggalLahir())
+        var usia = if(getMonthFromBirthdate(preferences.getTanggalLahir()) == 0){
+            1
+        }else{
+            getMonthFromBirthdate(preferences.getTanggalLahir())
+        }
         val panjang = preferences.getTB()!!.toDouble()
         if (preferences.getJenisKelamin() == "Laki-Laki"){
             val median = arrayListOf(67.6,69.2,70.6,72.0,73.3,74.5,75.7,76.9,78.0,79.3,80.2,81.2,82.3,83.2,84.2,85.1,86.0,86.9,87.9)

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".PengukuranActivity">
 
     <ProgressBar
@@ -57,22 +56,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35" >
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ti_tb"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:boxStrokeColor="@color/light_blue"
-            >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_tb"
                 android:inputType="numberDecimal"
                 android:cursorVisible="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_edittext"
+                android:layout_height="match_parent"
                 />
-        </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cek_tb"
@@ -110,22 +103,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bb">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ti_bb"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-            app:boxStrokeColor="@color/light_blue">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_bb"
                 android:cursorVisible="false"
                 android:inputType="numberDecimal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edittext"
                 />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cek_bb"

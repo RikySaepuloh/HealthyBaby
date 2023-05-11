@@ -23,7 +23,7 @@ import id.example.healthybaby.databinding.ActivityRegistrasiBinding
 class PengukuranActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPengukuranBinding
     private lateinit var database: DatabaseReference
-    var preferences  = Preferences()
+    var preferences = Preferences()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class PengukuranActivity : AppCompatActivity() {
         binding.btnSelanjutnya.setOnClickListener {
             preferences.saveBB(binding.etBb.text.toString())
             preferences.saveTB(binding.etTb.text.toString())
-            startActivity(Intent(this,ProsesActivity::class.java))
+            startActivity(Intent(this, ProsesActivity::class.java))
         }
 
         binding.btnCekBb.setOnClickListener {
@@ -50,11 +50,11 @@ class PengukuranActivity : AppCompatActivity() {
 
     @IgnoreExtraProperties
     data class Sensor(
-        var Tinggi: Long?=0,
-        var Berat: Long?=0
-    ){
+        var Tinggi: Long? = 0,
+        var Berat: Long? = 0
+    ) {
         @Exclude
-        fun toMap():Map<String, Long?>{
+        fun toMap(): Map<String, Long?> {
             return mapOf(
                 "Tinggi" to Tinggi,
                 "Berat" to Berat
@@ -62,78 +62,45 @@ class PengukuranActivity : AppCompatActivity() {
         }
     }
 
-    fun getBerat(){
+    fun getBerat() {
         binding.tvTitle.text = "MOHON TUNGGU"
-        binding.loading.visibility= View.VISIBLE
+        binding.loading.visibility = View.VISIBLE
         database.child("Sensor").get().addOnSuccessListener {
             val bb = it.child("Berat").getValue(Double::class.java).toString()
             try {
-                binding.etBb.setText(bb.substringBefore('.')+"."+bb.substringAfter('.').substring(0,2))
+                binding.etBb.setText(
+                    bb.substringBefore('.') + "." + bb.substringAfter('.').substring(0, 2)
+                )
             } catch (e: Exception) {
                 binding.etBb.setText(bb)
             }
             binding.tvTitle.text = "PENGUKURAN BERHASIL"
-            binding.loading.visibility= View.GONE
-            Snackbar.make(binding.root,"Data berhasil diperbarui",Snackbar.LENGTH_LONG).show()
+            binding.loading.visibility = View.GONE
+            Snackbar.make(binding.root, "Data berhasil diperbarui", Snackbar.LENGTH_LONG).show()
         }.addOnFailureListener {
             Log.d(TAG, "Error getting data", it)
-            binding.loading.visibility= View.GONE
+            binding.loading.visibility = View.GONE
         }
     }
 
-    fun getTinggi(){
+    fun getTinggi() {
         binding.tvTitle.text = "MOHON TUNGGU"
-        binding.loading.visibility= View.VISIBLE
+        binding.loading.visibility = View.VISIBLE
         database.child("Sensor").get().addOnSuccessListener {
             val tb = it.child("Tinggi").getValue(Double::class.java).toString()
             try {
-                binding.etTb.setText(tb.substringBefore('.')+"."+tb.substringAfter('.').substring(0,2))
+                binding.etTb.setText(
+                    tb.substringBefore('.') + "." + tb.substringAfter('.').substring(0, 2)
+                )
             } catch (e: Exception) {
                 binding.etTb.setText(tb)
             }
             binding.tvTitle.text = "PENGUKURAN BERHASIL"
-            binding.loading.visibility= View.GONE
-            Snackbar.make(binding.root,"Data berhasil diperbarui",Snackbar.LENGTH_LONG).show()
+            binding.loading.visibility = View.GONE
+            Snackbar.make(binding.root, "Data berhasil diperbarui", Snackbar.LENGTH_LONG).show()
         }.addOnFailureListener {
             Log.d(TAG, "Error getting data", it)
-            binding.loading.visibility= View.GONE
+            binding.loading.visibility = View.GONE
         }
     }
-
-//    fun getData(){
-//
-//        binding.loading.visibility= View.VISIBLE
-//        database.child("Sensor").get().addOnSuccessListener {
-//            it.child("Berat").getValue(Double::class.java)
-//            binding.etTb.setText(it.child("Tinggi").getValue(Double::class.java).toString())
-//            binding.etBb.setText(it.child("Berat").getValue(Double::class.java).toString())
-////            binding.etBb.setText(it.getValue(Sensor::class.java)?.Berat.toString())
-//            preferences.saveTB(it.getValue(Sensor::class.java)?.Tinggi.toString())
-//            preferences.saveBB(it.getValue(Sensor::class.java)?.Berat.toString())
-//            binding.tvTitle.text = "PENGUKURAN BERHASIL"
-//            Log.d(TAG, "Value is: ${it.value}")
-//            binding.loading.visibility= View.GONE
-//        }.addOnFailureListener {
-//            Log.d(TAG, "Error getting data", it)
-//            binding.loading.visibility= View.GONE
-//        }
-//
-//        // Read from the database
-////        myRef.addValueEventListener(object : ValueEventListener {
-////            override fun onDataChange(dataSnapshot: DataSnapshot) {
-////                // This method is called once with the initial value and again
-////                // whenever data at this location is updated.
-//////                val value = dataSnapshot.getValue<String>()
-//////                binding.etTb.setText(value)
-//////                binding.etBb.setText(value)
-////
-////                Log.d(TAG, "Value is: $dataSnapshot")
-////            }
-////
-////            override fun onCancelled(error: DatabaseError) {
-////                // Failed to read value
-////                Log.w(TAG, "Failed to read value.", error.toException())
-////            }
-////        })
-//    }
 }
