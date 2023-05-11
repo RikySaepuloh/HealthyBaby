@@ -237,6 +237,8 @@
                 <TextView
                     android:id="@+id/tv_imt"
                     android:gravity="end"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -262,6 +264,8 @@
                     android:gravity="end"
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:layout_height="wrap_content"
                     android:text=""/>
 
@@ -284,6 +288,8 @@
                     android:gravity="end"
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:layout_height="wrap_content"
                     android:text=""/>
 
@@ -405,6 +411,27 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:weightSum="2">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="MP-ASI 4"/>
+
+                <TextView
+                    android:id="@+id/tv_mp_asi4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -1,337 +1,568 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
-    android:padding="48sp"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hasil Pengukuran"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:layout_marginTop="48dp"
-        tools:layout_editor_absoluteX="48dp">
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="NIK"/>
-            <TextView
-                android:id="@+id/tv_nik"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:text="Hasil Pengukuran"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:textColor="@color/light_blue"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="24sp"
                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="48dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="8dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/light_blue"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="NIK"/>
+
+                            <TextView
+                                android:id="@+id/tv_nik"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Nama"/>
+
+                            <TextView
+                                android:id="@+id/tv_nama"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:gravity="end"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="Jenis Kelamin"/>
+                            <TextView
+                                android:id="@+id/tv_jk"
+                                android:layout_width="0dp"
+                                android:textStyle="bold"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="Tempat Lahir"/>
+                            <TextView
+                                android:id="@+id/tv_tempat_lahir"
+                                android:layout_width="0dp"
+                                android:textStyle="bold"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="Tanggal Lahir"/>
+                            <TextView
+                                android:id="@+id/tv_tanggal_lahir"
+                                android:layout_width="0dp"
+                                android:textStyle="bold"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="Umur"/>
+                            <TextView
+                                android:id="@+id/tv_usia"
+                                android:layout_width="0dp"
+                                android:textStyle="bold"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!--        <LinearLayout-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:orientation="horizontal"-->
+                <!--            android:weightSum="2">-->
+                <!--            <TextView-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="14sp"-->
+                <!--                android:text="NIK"/>-->
+                <!--            <TextView-->
+                <!--                android:id="@+id/tv_nik"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:textStyle="bold"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="14sp"-->
+                <!--                />-->
+                <!--        </LinearLayout>-->
+
+                <!--        <LinearLayout-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:orientation="horizontal"-->
+                <!--            android:layout_marginTop="12dp"-->
+                <!--            android:weightSum="2">-->
+                <!--            <TextView-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="14sp"-->
+                <!--                android:text="Nama Anak"/>-->
+                <!--            <TextView-->
+                <!--                android:id="@+id/tv_nama"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:textStyle="bold"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="14sp"-->
+                <!--                />-->
+                <!--        </LinearLayout>-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    app:strokeColor="@color/light_blue"
+                    app:strokeWidth="2dp"
+                    android:layout_marginTop="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginBottom="34dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Panjang Badan"/>
+
+                            <TextView
+                                android:id="@+id/tv_tb"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Berat Badan"/>
+
+                            <TextView
+                                android:id="@+id/tv_bb"
+                                android:gravity="end"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@color/light_blue"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="IMT"/>
+
+                            <TextView
+                                android:id="@+id/tv_imt"
+                                android:gravity="end"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+
+                                android:layout_height="wrap_content"
+                                android:text="Nilai Gizi"/>
+
+                            <TextView
+                                android:id="@+id/tv_nilai_gizi"
+                                android:gravity="end"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Nilai Tinggi"/>
+
+                            <TextView
+                                android:id="@+id/tv_nilai_tinggi"
+                                android:gravity="end"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Status Gizi"/>
+
+                            <TextView
+                                android:id="@+id/tv_status_gizi"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Status Tinggi"/>
+
+                            <TextView
+                                android:id="@+id/tv_status_tinggi"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@color/light_blue"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="MP-ASI 1"/>
+
+                            <TextView
+                                android:id="@+id/tv_mp_asi1"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="MP-ASI 2"/>
+
+                            <TextView
+                                android:id="@+id/tv_mp_asi2"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="MP-ASI 3"/>
+
+                            <TextView
+                                android:id="@+id/tv_mp_asi3"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="MP-ASI 4"/>
+
+                            <TextView
+                                android:id="@+id/tv_mp_asi4"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Status MP-ASI"/>
+
+                            <TextView
+                                android:id="@+id/tv_mp_asi"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Nama Anak"/>
-            <TextView
-                android:id="@+id/tv_nama"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Jenis Kelamin"/>
-            <TextView
-                android:id="@+id/tv_jk"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Tempat Lahir"/>
-            <TextView
-                android:id="@+id/tv_tempat_lahir"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Tanggal Lahir"/>
-            <TextView
-                android:id="@+id/tv_tanggal_lahir"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Umur"/>
-            <TextView
-                android:id="@+id/tv_usia"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Panjang Badan"/>
-            <TextView
-                android:id="@+id/tv_tb"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Berat Badan"/>
-            <TextView
-                android:id="@+id/tv_bb"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="IMT"/>
-            <TextView
-                android:id="@+id/tv_imt"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
+    </ScrollView>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Status Tinggi"/>
-            <TextView
-                android:id="@+id/tv_status_tinggi"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Status Gizi"/>
-            <TextView
-                android:id="@+id/tv_status_gizi"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text=""
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:text="Status MP-ASI"/>
-            <TextView
-                android:id="@+id/tv_mp_asi"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_simpan"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         android:insetTop="0dp"
+        android:layout_centerHorizontal="true"
         android:insetBottom="0dp"
         android:text="Simpan Data"
+        android:layout_marginBottom="24dp"
         android:textAllCaps="false"
-        android:textColor="@color/light_blue"
         app:cornerRadius="8dp"
-        android:layout_marginBottom="68dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_alignParentBottom="true"
+         />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

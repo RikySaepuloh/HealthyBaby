@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointBackward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -29,10 +31,13 @@ class RegistrasiActivity : AppCompatActivity() {
         }
 
         binding.etTglLahir.setOnClickListener {
+            val constraintsBuilder = CalendarConstraints.Builder().setValidator(
+                DateValidatorPointBackward.now())
             val datePicker =
                 MaterialDatePicker.Builder.datePicker()
                     .setTitleText("Pilih Tanggal Lahir")
                     .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                    .setCalendarConstraints(constraintsBuilder.build())
                     .build()
             datePicker.addOnPositiveButtonClickListener {
                 val utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
@@ -47,7 +52,7 @@ class RegistrasiActivity : AppCompatActivity() {
         }
 
         binding.btnSimpan.setOnClickListener {
-            val jk = if (binding.rgJk.id == binding.rbLk.id){
+            val jk = if (binding.rgJk.checkedRadioButtonId == binding.rbLk.id){
                 "Laki-Laki"
             }else{
                 "Perempuan"

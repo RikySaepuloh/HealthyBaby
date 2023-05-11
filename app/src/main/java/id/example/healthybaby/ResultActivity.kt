@@ -89,6 +89,7 @@ class ResultActivity : AppCompatActivity() {
             "mp-asi 1" to preferences.getJenis1(),
             "mp-asi 2" to preferences.getJenis2(),
             "mp-asi 3" to preferences.getJenis3(),
+            "mp-asi 4" to preferences.getJenis4(),
             "frekuensi" to preferences.getFrekuensi(),
             "hasil mp-asi" to preferences.getHasilJenis(),
             "imt" to imt,
@@ -115,10 +116,16 @@ class ResultActivity : AppCompatActivity() {
         binding.tvJk.text = preferences.getJenisKelamin()
         binding.tvTempatLahir.text = preferences.getTempatLahir()
         binding.tvTanggalLahir.text = preferences.getTanggalLahir()
+        binding.tvNilaiGizi.text = nilaiGizi
+        binding.tvNilaiTinggi.text = nilaiTinggi
         binding.tvStatusGizi.text = statusGizi
         binding.tvStatusTinggi.text = statusTinggi
         binding.tvTb.text = preferences.getTB()
         binding.tvBb.text = preferences.getBB()
+        binding.tvMpAsi1.text = preferences.getJenis1()
+        binding.tvMpAsi2.text = preferences.getJenis2()
+        binding.tvMpAsi3.text = preferences.getJenis3()
+        binding.tvMpAsi4.text = preferences.getJenis4()
         binding.tvStatusTinggi.text = statusTinggi
         val berat = preferences.getBB()!!.toDouble()
         val panjang = preferences.getTB()!!.toDouble()
@@ -151,7 +158,11 @@ class ResultActivity : AppCompatActivity() {
 
 
     fun statusGizi(){
-        val usia = getMonthFromBirthdate(preferences.getTanggalLahir())
+        val usia = if(getMonthFromBirthdate(preferences.getTanggalLahir()) == 0){
+            1
+        }else{
+            getMonthFromBirthdate(preferences.getTanggalLahir())
+        }
         val berat = preferences.getBB()!!.toDouble()
         val panjang = preferences.getTB()!!.toDouble()
         imt = berat/((panjang/100)*(panjang/100))
