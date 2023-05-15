@@ -31,7 +31,6 @@ class DetailRiwayatActivity : AppCompatActivity() {
 
     fun getDetailRiwayat(id: String) {
         val db = FirebaseFirestore.getInstance()
-//        val usersRef = db.collection("bayi")
         val userId=preferences.getUserID()
         val medicalHistoryRef = userId?.let { db.collection("bayi").document(it).collection("medicalHistory").document(id) }
 
@@ -50,11 +49,11 @@ class DetailRiwayatActivity : AppCompatActivity() {
 
                 val statusGizi = mydata?.get("status gizi").toString()
                 when (statusGizi) {
-                    "Sangat Kurus", "Sangat Obesitas" -> {
+                    "Gizi Buruk", "Obesitas", "Tidak Diketahui" -> {
                         binding.tvStatusGizi.text = statusGizi
                         binding.tvStatusGizi.setTextColor(ContextCompat.getColor(this,R.color.red))
                     }
-                    "Kurus", "Obesitas" -> {
+                    "Gizi Kurang", "Beresiko Gizi Lebih", "Gizi Lebih" -> {
                         binding.tvStatusGizi.text = statusGizi
                         binding.tvStatusGizi.setTextColor(ContextCompat.getColor(this, R.color.yellow))
                     }
@@ -66,7 +65,7 @@ class DetailRiwayatActivity : AppCompatActivity() {
 
                 val statusTinggi = mydata?.get("status tinggi").toString()
                 when (statusTinggi) {
-                    "Sangat Pendek", "Sangat Tinggi" -> {
+                    "Sangat Pendek" , "Tidak Diketahui"-> {
                         binding.tvStatusTinggi.text = statusTinggi
                         binding.tvStatusTinggi.setTextColor(ContextCompat.getColor(this,R.color.red))
                     }
@@ -105,28 +104,6 @@ class DetailRiwayatActivity : AppCompatActivity() {
                 binding.tvImt.text = mydata["imt"].toString()
                 binding.tvTanggal.text = mydata["date"].toString()
 
-//                Log.d("myhealthy", mydata.toString())
-//                myadapter.initData(mydata)
-//                mydata
-//                if (querySnapshot.isEmpty) {
-//                    Toast.makeText(this,"Akun tidak ditemukan!", Toast.LENGTH_LONG).show()
-//                } else {
-//                    // Retrieve user document and compare password
-//                    val userDoc = querySnapshot.documents[0]
-//                    val user = userDoc.data
-//                    if (user?.get("password") == enteredPassword) {
-//                        preferences.saveUserID(userDoc.id)
-//                        preferences.saveLogStatus(true)
-//                        preferences.saveNamaNakes(user["nama"] as String?)
-//
-//                        startActivity(Intent(this,InputNIKActivity::class.java))
-//                        finishAffinity()
-//                        // Passwords match, authenticate user
-//                    } else {
-//                        // Passwords do not match, reject login attempt
-//                        Toast.makeText(this,"Username atau Password anda salah!", Toast.LENGTH_LONG).show()
-//                    }
-//                }
             } else {
                 Log.e("LoginActivity", "Error retrieving user document:", task.exception)
             }

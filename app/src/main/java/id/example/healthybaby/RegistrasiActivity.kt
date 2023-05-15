@@ -2,19 +2,19 @@ package id.example.healthybaby
 
 import android.content.ContentValues
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointBackward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.example.healthybaby.databinding.ActivityRegistrasiBinding
-import id.example.healthybaby.databinding.ActivityWelcomeBinding
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.min
 
 class RegistrasiActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistrasiBinding
@@ -29,14 +29,19 @@ class RegistrasiActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             finish()
         }
-
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.MONTH, -24)
+        val minDate = calendar.timeInMillis
+        val calendar2 = Calendar.getInstance()
+        calendar2.add(Calendar.MONTH, -6)
+        val maxDate = calendar2.timeInMillis
         binding.etTglLahir.setOnClickListener {
-            val constraintsBuilder = CalendarConstraints.Builder().setValidator(
+            val constraintsBuilder = CalendarConstraints.Builder().setStart(minDate).setEnd(maxDate).setValidator(
                 DateValidatorPointBackward.now())
             val datePicker =
                 MaterialDatePicker.Builder.datePicker()
                     .setTitleText("Pilih Tanggal Lahir")
-                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                    .setSelection(calendar2.timeInMillis)
                     .setCalendarConstraints(constraintsBuilder.build())
                     .build()
             datePicker.addOnPositiveButtonClickListener {
