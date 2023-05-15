@@ -32,16 +32,14 @@ class RegistrasiActivity : AppCompatActivity() {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.MONTH, -24)
         val minDate = calendar.timeInMillis
-        val calendar2 = Calendar.getInstance()
-        calendar2.add(Calendar.MONTH, -6)
-        val maxDate = calendar2.timeInMillis
+        val maxDate = System.currentTimeMillis();
         binding.etTglLahir.setOnClickListener {
             val constraintsBuilder = CalendarConstraints.Builder().setStart(minDate).setEnd(maxDate).setValidator(
                 DateValidatorPointBackward.now())
             val datePicker =
                 MaterialDatePicker.Builder.datePicker()
                     .setTitleText("Pilih Tanggal Lahir")
-                    .setSelection(calendar2.timeInMillis)
+                    .setSelection(maxDate)
                     .setCalendarConstraints(constraintsBuilder.build())
                     .build()
             datePicker.addOnPositiveButtonClickListener {
