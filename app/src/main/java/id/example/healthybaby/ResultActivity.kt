@@ -230,7 +230,7 @@ class ResultActivity : AppCompatActivity() {
                     nilaiGizi = nilaistatus.toString()
                     statusGizi = if (nilaistatus < sd3min[usia-1]){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd2min[usia-1] && nilaistatus < sd2min[usia-1]){
+                    }else if (nilaistatus >= sd3min[usia-1] && nilaistatus < sd2min[usia-1]){
                         "Gizi Kurang"
                     }else if (nilaistatus >= sd2min[usia-1] && nilaistatus <= sd1plus[usia-1]){
                         "Gizi Baik (Normal)"
@@ -243,12 +243,13 @@ class ResultActivity : AppCompatActivity() {
                     }else{
                         "Tidak diketahui"
                     }
+                    Log.e("Median",median[usia-1].toString())
                 }else{
                     val nilaistatus = (imt - median[usia-1]) / (sd1plus[usia-1] - (median[usia-1]))
                     nilaiGizi = nilaistatus.toString()
                     statusGizi = if (nilaistatus < sd3min[usia-1]){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd2min[usia-1] && nilaistatus < sd2min[usia-1]){
+                    }else if (nilaistatus >= sd3min[usia-1] && nilaistatus < sd2min[usia-1]){
                         "Gizi Kurang"
                     }else if (nilaistatus >= sd2min[usia-1] && nilaistatus <= sd1plus[usia-1]){
                         "Gizi Baik (Normal)"
@@ -261,6 +262,7 @@ class ResultActivity : AppCompatActivity() {
                     }else{
                         "Tidak diketahui"
                     }
+                    Log.e("Median",median[usia-1].toString())
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -299,6 +301,7 @@ class ResultActivity : AppCompatActivity() {
                     }else{
                         ("Tidak Diketahui")
                     }
+                    Log.e("Median",median[usia-1].toString())
                 }else{
                     val nilaistatus = (panjang - median[usia-1]) / (sd1plus[usia-1] + (median[usia-1]))
                     nilaiTinggi = nilaistatus.toString()
@@ -313,6 +316,7 @@ class ResultActivity : AppCompatActivity() {
                     }else{
                         ("Tidak Diketahui")
                     }
+                    Log.e("Median",median[usia-1].toString())
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
