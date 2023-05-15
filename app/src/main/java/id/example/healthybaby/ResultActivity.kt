@@ -176,39 +176,35 @@ class ResultActivity : AppCompatActivity() {
                     val nilaistatus = (imt - median[usia]) / (median[usia] - (sd1min[usia]))
                     Log.e("nilai status",(imt - median[usia]).toString() + " / " + (median[usia] - sd1min[usia]).toString())
                     nilaiGizi = nilaistatus.toString()
-                    statusGizi = if (nilaistatus < sd3min[usia]){
+                    statusGizi = if (nilaistatus < -3.0){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus < sd2min[usia]){
+                    }else if (nilaistatus > -3 && nilaistatus <= -2){
                         "Gizi Kurang"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus <= sd1plus[usia]){
+                    }else if (nilaistatus > -2 && nilaistatus <= 1){
                         "Gizi Baik (Normal)"
-                    }else if (nilaistatus > sd1plus[usia] && nilaistatus <= sd2plus[usia]){
+                    }else if (nilaistatus > 1 && nilaistatus <= 2){
                         "Beresiko Gizi Lebih"
-                    }else if (nilaistatus > sd2plus[usia] && nilaistatus <= sd3plus[usia]){
+                    }else if (nilaistatus > 2 && nilaistatus <= 3){
                         "Gizi Lebih"
-                    }else if(nilaistatus > sd3plus[usia]){
-                        "Obesitas"
                     }else{
-                        "Tidak diketahui"
+                        "Obesitas"
                     }
                     Log.e("Median",median[usia].toString() + " " + imt + " " + sd1min[usia])
                 }else{
                     val nilaistatus = (imt - median[usia]) / (sd1plus[usia] - (median[usia]))
                     nilaiGizi = nilaistatus.toString()
-                    statusGizi = if (nilaistatus < sd3min[usia]){
+                    statusGizi = if (nilaistatus < -3.0){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus < sd2min[usia]){
+                    }else if (nilaistatus > -3 && nilaistatus <= -2){
                         "Gizi Kurang"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus <= sd1plus[usia]){
+                    }else if (nilaistatus > -2 && nilaistatus <= 1){
                         "Gizi Baik (Normal)"
-                    }else if (nilaistatus > sd1plus[usia] && nilaistatus <= sd2plus[usia]){
+                    }else if (nilaistatus > 1 && nilaistatus <= 2){
                         "Beresiko Gizi Lebih"
-                    }else if (nilaistatus > sd2plus[usia] && nilaistatus <= sd3plus[usia]){
+                    }else if (nilaistatus > 2 && nilaistatus <= 3){
                         "Gizi Lebih"
-                    }else if(nilaistatus > sd3plus[usia]){
-                        "Obesitas"
                     }else{
-                        "Tidak diketahui"
+                        "Obesitas"
                     }
                     Log.e("Median",median[usia].toString() + " " + imt + " " + sd1plus[usia])
                 }
@@ -228,39 +224,35 @@ class ResultActivity : AppCompatActivity() {
                 if(imt < median[usia]){
                     val nilaistatus = (imt - median[usia]) / (median[usia] - (sd1min[usia]))
                     nilaiGizi = nilaistatus.toString()
-                    statusGizi = if (nilaistatus < sd3min[usia]){
+                    statusGizi = if (nilaistatus < -3.0){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd3min[usia] && nilaistatus < sd2min[usia]){
+                    }else if (nilaistatus > -3 && nilaistatus <= -2){
                         "Gizi Kurang"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus <= sd1plus[usia]){
+                    }else if (nilaistatus > -2 && nilaistatus <= 1){
                         "Gizi Baik (Normal)"
-                    }else if (nilaistatus > sd1plus[usia] && nilaistatus <= sd2plus[usia]){
+                    }else if (nilaistatus > 1 && nilaistatus <= 2){
                         "Beresiko Gizi Lebih"
-                    }else if (nilaistatus > sd2plus[usia] && nilaistatus <= sd3plus[usia]){
+                    }else if (nilaistatus > 2 && nilaistatus <= 3){
                         "Gizi Lebih"
-                    }else if(nilaistatus > sd3plus[usia]){
-                        "Obesitas"
                     }else{
-                        "Tidak diketahui"
+                        "Obesitas"
                     }
                     Log.e("Median",median[usia].toString() + " " + imt + " " + sd1min[usia])
                 }else{
                     val nilaistatus = (imt - median[usia]) / (sd1plus[usia] - (median[usia]))
                     nilaiGizi = nilaistatus.toString()
-                    statusGizi = if (nilaistatus < sd3min[usia]){
+                    statusGizi = if (nilaistatus < -3.0){
                         "Gizi Buruk"
-                    }else if (nilaistatus >= sd3min[usia] && nilaistatus < sd2min[usia]){
+                    }else if (nilaistatus > -3 && nilaistatus <= -2){
                         "Gizi Kurang"
-                    }else if (nilaistatus >= sd2min[usia] && nilaistatus <= sd1plus[usia]){
+                    }else if (nilaistatus > -2 && nilaistatus <= 1){
                         "Gizi Baik (Normal)"
-                    }else if (nilaistatus > sd1plus[usia] && nilaistatus <= sd2plus[usia]){
+                    }else if (nilaistatus > 1 && nilaistatus <= 2){
                         "Beresiko Gizi Lebih"
-                    }else if (nilaistatus > sd2plus[usia] && nilaistatus <= sd3plus[usia]){
+                    }else if (nilaistatus > 2 && nilaistatus <= 3){
                         "Gizi Lebih"
-                    }else if(nilaistatus > sd3plus[usia]){
-                        "Obesitas"
                     }else{
-                        "Tidak diketahui"
+                        "Obesitas"
                     }
                     Log.e("Median",median[usia].toString() + " " + imt + " " + sd1min[usia])
                 }
@@ -288,31 +280,27 @@ class ResultActivity : AppCompatActivity() {
                 if(panjang < median[0]){
                     val nilaistatus = (panjang - median[usia]) / (median[usia] - (sd1min[usia]))
                     nilaiTinggi = nilaistatus.toString()
-                    statusTinggi = if (nilaistatus <= sd3min[usia]){
-                        ("Sangat Pendek")
-                    }else if (nilaistatus > sd3min[usia] && nilaistatus <= sd2min[usia]){
-                        ("Pendek")
-                    }else if (nilaistatus > sd2min[usia] && nilaistatus <= sd3plus[usia]){
-                        ("Normal")
-                    }else if(nilaistatus > sd3plus[usia]){
-                        ("Tinggi")
+                    statusTinggi = if (nilaistatus <= -3){
+                        "Sangat Pendek"
+                    }else if(nilaistatus > -3 && nilaistatus <= -2) {
+                        "Pendek"
+                    }else if (nilaistatus > -2 && nilaistatus < 3) {
+                        "Normal"
                     }else{
-                        ("Tidak Diketahui")
+                        "Tinggi"
                     }
                     Log.e("Median",median[usia].toString())
                 }else{
                     val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] + (median[usia]))
                     nilaiTinggi = nilaistatus.toString()
-                    statusTinggi = if (nilaistatus <= sd3min[usia]){
-                        ("Sangat Pendek")
-                    }else if (nilaistatus > sd3min[usia] && nilaistatus <= sd2min[usia]){
-                        ("Pendek")
-                    }else if (nilaistatus > sd2min[usia] && nilaistatus <= sd3plus[usia]){
-                        ("Normal")
-                    }else if(nilaistatus > sd3plus[usia]){
-                        ("Tinggi")
+                    statusTinggi = if (nilaistatus <= -3){
+                        "Sangat Pendek"
+                    }else if(nilaistatus > -3 && nilaistatus <= -2) {
+                        "Pendek"
+                    }else if (nilaistatus > -2 && nilaistatus < 3) {
+                        "Normal"
                     }else{
-                        ("Tidak Diketahui")
+                        "Tinggi"
                     }
                     Log.e("Median",median[usia].toString())
                 }
@@ -334,30 +322,26 @@ class ResultActivity : AppCompatActivity() {
                 if(panjang < median[0]){
                     val nilaistatus = (panjang - median[usia]) / (median[usia] - (sd1min[usia]))
                     nilaiTinggi = nilaistatus.toString()
-                    statusTinggi = if (nilaistatus <= sd3min[usia]){
-                        ("Sangat Pendek")
-                    }else if (nilaistatus > sd3min[usia] && nilaistatus <= sd2min[usia]){
-                        ("Pendek")
-                    }else if (nilaistatus > sd2min[usia] && nilaistatus <= sd3plus[usia]){
-                        ("Normal")
-                    }else if(nilaistatus > sd3plus[usia]){
-                        ("Tinggi")
+                    statusTinggi = if (nilaistatus <= -3){
+                        "Sangat Pendek"
+                    }else if(nilaistatus > -3 && nilaistatus <= -2) {
+                        "Pendek"
+                    }else if (nilaistatus > -2 && nilaistatus < 3) {
+                        "Normal"
                     }else{
-                        ("Tidak Diketahui")
+                        "Tinggi"
                     }
                 }else{
                     val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] + (median[usia]))
                     nilaiTinggi = nilaistatus.toString()
-                    statusTinggi = if (nilaistatus <= sd3min[usia]){
-                        ("Sangat Pendek")
-                    }else if (nilaistatus > sd3min[usia] && nilaistatus <= sd2min[usia]){
-                        ("Pendek")
-                    }else if (nilaistatus > sd2min[usia] && nilaistatus <= sd3plus[usia]){
-                        ("Normal")
-                    }else if(nilaistatus > sd3plus[usia]){
-                        ("Tinggi")
+                    statusTinggi = if (nilaistatus <= -3){
+                        "Sangat Pendek"
+                    }else if(nilaistatus > -3 && nilaistatus <= -2) {
+                        "Pendek"
+                    }else if (nilaistatus > -2 && nilaistatus < 3) {
+                        "Normal"
                     }else{
-                        ("Tidak Diketahui")
+                        "Tinggi"
                     }
                 }
             } catch (e: Exception) {
