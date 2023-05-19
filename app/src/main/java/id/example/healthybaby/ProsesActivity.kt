@@ -18,6 +18,7 @@ class ProsesActivity : AppCompatActivity() {
     var jenis3 = ""
     var jenis4 = ""
     val preferences = Preferences()
+    val karbohidrat = arrayListOf("Bihun", "Bubur Beras", "Kentang", "Makaroni", "Mie Basah", "Mie Kering", "Nasi", "Nasi Tim", "Roti Putih","Singkong","Talas","Tepung Beras","Tepung Terigu","Tepung Hunkwee","Ubi")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +26,13 @@ class ProsesActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(this)
 
-//        if (getAge(preferences.getTanggalLahir().toString()).toInt() < 9 ){
-//
-//        }
+        if (getAge(preferences.getTanggalLahir().toString()) < 9 ){
+            frekuensi="2-3x"
+            binding.mcJenis4.visibility=View.GONE
+        }else{
+            frekuensi="3-4x"
+            binding.mcJenis4.visibility=View.VISIBLE
+        }
 
         binding.btnSelanjutnya.setOnClickListener {
             if (frekuensi==""){
