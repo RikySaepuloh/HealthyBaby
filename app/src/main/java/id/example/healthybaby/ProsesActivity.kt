@@ -150,7 +150,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
 
-        if (getAge(preferences.getTanggalLahir().toString()) < 9 ){
+        if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
             binding.etFrekuensi.setItems(frek1)
         }else{
             binding.etFrekuensi.setItems(frek2)
