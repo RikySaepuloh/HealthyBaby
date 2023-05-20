@@ -2,6 +2,7 @@ package id.example.healthybaby
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -35,118 +36,118 @@ class ProsesActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(this)
 
+        val spinner = Spinner(this)
         val layoutKarbo = findViewById<LinearLayout>(R.id.linearkarbo)
-        val spinner = MaterialSpinner(this)
-        val parentView = spinner.parent as? ViewGroup
-        parentView?.removeView(spinner)
-        spinner.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner.hint = "Pilih MP-ASI"
-        spinner.setItems(karbohidrat)
-        spinner.setOnItemSelectedListener { view, position, id, item ->
-            jenis1+= ",$item"
-            layoutKarbo.addView(spinner)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, karbohidrat)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis1+= ",${karbohidrat[position]}"
+                layoutKarbo.addView(spinner)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
         }
         if (layoutKarbo != null){
             layoutKarbo.addView(spinner)
         }
 
-        val layoutprohen=findViewById<LinearLayout>(R.id.linearprohen)
-        val spinner2 = MaterialSpinner(this,null)
-        val parentView2 = spinner2.parent as? ViewGroup
-        parentView2?.removeView(spinner2)
-        spinner2.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner2.hint = "Pilih MP-ASI"
-        spinner2.setItems(protein_hewani)
-        spinner2.setOnItemSelectedListener { view, position, id, item ->
-            jenis2+= ",$item"
-            layoutprohen.addView(spinner2)
+        val spinner2 = Spinner(this)
+        val layoutprohen = findViewById<LinearLayout>(R.id.linearprohen)
+        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, protein_hewani)
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner2.adapter = adapter2
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis2+= ",${protein_hewani[position]}"
+                layoutprohen.addView(spinner2)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
         }
         if (layoutprohen != null){
             layoutprohen.addView(spinner2)
         }
 
-        val layoutprobi=findViewById<LinearLayout>(R.id.linearprobi)
-        val spinner3 = MaterialSpinner(this,null)
-        val parentView3 = spinner3.parent as? ViewGroup
-        parentView3?.removeView(spinner3)
-        spinner3.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner3.hint = "Pilih MP-ASI"
-        spinner3.setItems(protein_nabati)
-        spinner3.setOnItemSelectedListener { view, position, id, item ->
-            jenis3+= ",$item"
-            layoutprobi.addView(spinner3)
+        val spinner3 = Spinner(this)
+        val layoutprobi = findViewById<LinearLayout>(R.id.linearprobi)
+        val adapter3 = ArrayAdapter(this, android.R.layout.simple_spinner_item, protein_nabati)
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner3.adapter = adapter3
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis3+= ",${protein_nabati[position]}"
+                layoutprobi.addView(spinner3)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
         }
         if (layoutprobi != null){
             layoutprobi.addView(spinner3)
         }
 
-        val layoutLemak=findViewById<LinearLayout>(R.id.linearlemak)
-        val spinner4 = MaterialSpinner(this,null)
-        val parentView4 = spinner4.parent as? ViewGroup
-        parentView4?.removeView(spinner4)
-        spinner4.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner4.hint = "Pilih MP-ASI"
-        spinner4.setItems(lemak)
-        spinner4.setOnItemSelectedListener { view, position, id, item ->
-            jenis4+= ",$item"
-            layoutLemak.addView(spinner4)
+        val spinner4 = Spinner(this)
+        val layoutlemak = findViewById<LinearLayout>(R.id.linearlemak)
+        val adapter4 = ArrayAdapter(this, android.R.layout.simple_spinner_item, lemak)
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner4.adapter = adapter4
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis4+= ",${lemak[position]}"
+                layoutlemak.addView(spinner4)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
         }
-        if (layoutLemak != null){
-            layoutLemak.addView(spinner4)
-        }
-
-        val layoutSayur=findViewById<LinearLayout>(R.id.linearsayur)
-        val spinner5 = MaterialSpinner(this,null)
-        val parentView5 = spinner5.parent as? ViewGroup
-        parentView5?.removeView(spinner5)
-        spinner5.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner5.hint = "Pilih MP-ASI"
-        spinner5.setItems(sayuran)
-        spinner5.setOnItemSelectedListener { view, position, id, item ->
-            jenis5+= ",$item"
-            layoutSayur.addView(spinner5)
-        }
-        if (layoutSayur != null){
-            layoutSayur.addView(spinner5)
+        if (layoutlemak != null){
+            layoutlemak.addView(spinner4)
         }
 
-        val layoutBuah=findViewById<LinearLayout>(R.id.linearkarbo)
-        val spinner6 = MaterialSpinner(this,null)
-        val parentView6 = spinner6.parent as? ViewGroup
-        parentView6?.removeView(spinner6)
-        spinner6.layoutParams =
-            LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-        spinner6.hint = "Pilih MP-ASI"
-        spinner6.setItems(buah)
-        spinner6.setOnItemSelectedListener { view, position, id, item ->
-            jenis6+= ",$item"
-            layoutBuah.addView(spinner6)
+        val spinner5 = Spinner(this)
+        val layoutsayur = findViewById<LinearLayout>(R.id.linearsayur)
+        val adapter5 = ArrayAdapter(this, android.R.layout.simple_spinner_item, sayuran)
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner5.adapter = adapter5
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner5.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis5+= ",${protein_nabati[position]}"
+                layoutsayur.addView(spinner5)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
         }
-        if (layoutBuah != null){
-            layoutBuah.addView(spinner6)
+        if (layoutsayur != null){
+            layoutsayur.addView(spinner5)
+        }
+
+        val spinner6 = Spinner(this)
+        val layoutbuah = findViewById<LinearLayout>(R.id.linearbuah)
+        val adapter6 = ArrayAdapter(this, android.R.layout.simple_spinner_item, buah)
+        adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner6.adapter = adapter6
+// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
+        spinner6.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                jenis6+= ",${buah[position]}"
+                layoutbuah.addView(spinner6)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Tindakan yang dijalankan saat tidak ada item yang dipilih
+            }
+        }
+        if (layoutbuah != null){
+            layoutbuah.addView(spinner6)
         }
 
 
