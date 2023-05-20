@@ -24,6 +24,8 @@ class Preferences {
     private var jenis2 = "jenis2"
     private var jenis3 = "jenis3"
     private var jenis4 = "jenis4"
+    private var jenis5 = "jenis5"
+    private var jenis6 = "jenis6"
     private var hasiljenis = "hasiljenis"
     private var nama_nakes = "nama_nakes"
     private var tanggal_lahir = "tanggal_lahir"
@@ -111,6 +113,16 @@ class Preferences {
 
     fun saveJenis4(value: String?) {
         spEditor!!.putString(jenis4, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis5(value: String?) {
+        spEditor!!.putString(jenis5, value)
+        spEditor!!.commit()
+    }
+
+    fun saveJenis6(value: String?) {
+        spEditor!!.putString(jenis6, value)
         spEditor!!.commit()
     }
 
@@ -281,6 +293,14 @@ class Preferences {
 
     fun getJenis4(): String? {
         return sp!!.getString(jenis4, "N/A")
+    }
+
+    fun getJenis5(): String? {
+        return sp!!.getString(jenis5, "N/A")
+    }
+
+    fun getJenis6(): String? {
+        return sp!!.getString(jenis6, "N/A")
     }
 
     fun getTempatLahir(): String? {
