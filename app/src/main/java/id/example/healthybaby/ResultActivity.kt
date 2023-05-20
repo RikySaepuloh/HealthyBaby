@@ -122,6 +122,7 @@ class ResultActivity : AppCompatActivity() {
         binding.tvStatusTinggi.text = statusTinggi
         binding.tvTb.text = preferences.getTB()
         binding.tvBb.text = preferences.getBB()
+        binding.tvFrekuensi.text = preferences.getFrekuensi()
         binding.tvMpAsi1.text = preferences.getJenis1()
         binding.tvMpAsi2.text = preferences.getJenis2()
         binding.tvMpAsi3.text = preferences.getJenis3()

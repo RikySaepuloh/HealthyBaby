@@ -20,9 +20,10 @@ class ProsesActivity : AppCompatActivity() {
     val protein_hewani = arrayListOf("Ayam Tanpa Kulit","Babat" ,"Cumi-cumi","Daging Kerbau","Ikan asin","Ikan kakap","Ikan kembung","Ikan lele","Ikan mas","Ikan mujair","Ikan peda","Ikan pindang","Ikan segar","Kerang","Udang basah","Bakso","Daging kambing","Daging sapi","Hati ayam","Hati sapi","Otak","Telur ayam","Telur bebek","Ayam dengan kulit","Bebek","Kuning telur")
     val protein_nabati = arrayListOf("Kacang hijau","Kacang kedelai","Kacang merah segar","Kacang tanah","Tahu","Tempe")
     val lemak = arrayListOf("Mentega","Minyak bunga matahari","Minyak jagung","Minyak kedele","Minyak kelapa","Minyak kelapa sawit","Minyak zaitun","Santan")
-
     val sayuran = arrayListOf("Gambas","Jamur kuping","Tomat sayur","Oyong" ,"Ketimun"	,"Labu air","Selada air","Selada","Lobak","Daun bawang","Bayam","Bit","Labu waluh","Genjer", "Kapri muda","Kol", "Daun talas","Jagung muda", "Brokoli","Daun kecipir","Pepaya muda","Sawi","Kembang kol","Buncis","Labu siam","Rebung","Kemangi","Daun kacang panjang","Pare","Toge","Kangkung","Terong","Kacang panjang","Wortel","Bayam merah","Mangkokan","Nangka muda","Daun pepaya", "Daun katuk","Kacang kapri","Melinjo","Toge kedelai", "Daun melinjo","Daun talas","Kluwih","Daun singkong")
     val buah = arrayListOf("Avokado","Anggur","Apel merah","Apel malang","Belimbing","Blewah","Duku","Durian","Jambu air","Jambu bol","Jeruk balik","Jerut garut","Jeruk manis","Kedondong","Kurma","Leci","Mangga","Manggis","Markisa","Melon","Nangka masak","Nanas","Pear","Pepaya","Pisang ambon","Pisang kepok","Pisan mas","Pisang raja","Rambutan","Sawo","Salak","Semangka","Sirsak","Srikaya","Stroberi")
+    val frek1 = arrayListOf("<2x per hari","2x per hari", "3x per hari")
+    val frek2 = arrayListOf("2x per hari", "3x per hari","4x per hari")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +32,14 @@ class ProsesActivity : AppCompatActivity() {
         preferences.setPreferences(this)
 
         if (getAge(preferences.getTanggalLahir().toString()) < 9 ){
-            frekuensi="2-3x"
             binding.mcJenis4.visibility=View.GONE
+            binding.etFrekuensi.setItems(frek1)
         }else{
-            frekuensi="3-4x"
             binding.mcJenis4.visibility=View.VISIBLE
+            binding.etFrekuensi.setItems(frek2)
+        }
+        binding.etFrekuensi.setOnItemSelectedListener { view, position, id, item ->
+            frekuensi=item.toString()
         }
 
         binding.btnSelanjutnya.setOnClickListener {
@@ -49,21 +53,29 @@ class ProsesActivity : AppCompatActivity() {
                 preferences.saveJenis2(jenis2)
                 preferences.saveJenis3(jenis3)
                 preferences.saveJenis4(jenis4)
-                if (frekuensi == "3-4x"){
-                    if (jenis1 == jenis2 && jenis2 == jenis3 && jenis3 == jenis4){
-                        preferences.saveHasilJenis("Kurang")
-                    }else if (jenis1 == jenis2 || jenis2 == jenis3 || jenis3 == jenis4 || jenis2==jenis4 || jenis1== jenis4 || jenis1==jenis3){
-                        preferences.saveHasilJenis("Cukup")
-                    }else{
-                        preferences.saveHasilJenis("Baik")
+                if (getAge(preferences.getTanggalLahir().toString()) < 9 ){
+                    when (frekuensi) {
+                        "<2x per hari" -> {
+                            preferences.saveHasilJenis("Kurang")
+                        }
+                        "2x per hari" -> {
+                            preferences.saveHasilJenis("Cukup")
+                        }
+                        else -> {
+                            preferences.saveHasilJenis("Baik")
+                        }
                     }
                 }else{
-                    if (jenis1 == jenis2 && jenis2 == jenis3){
-                        preferences.saveHasilJenis("Kurang")
-                    }else if (jenis1 == jenis2 || jenis2 == jenis3 || jenis1==jenis3){
-                        preferences.saveHasilJenis("Cukup")
-                    }else{
-                        preferences.saveHasilJenis("Baik")
+                    when (frekuensi) {
+                        "2x per hari" -> {
+                            preferences.saveHasilJenis("Kurang")
+                        }
+                        "3x per hari" -> {
+                            preferences.saveHasilJenis("Cukup")
+                        }
+                        else -> {
+                            preferences.saveHasilJenis("Baik")
+                        }
                     }
                 }
                 startActivity(Intent(this,ResultActivity::class.java))

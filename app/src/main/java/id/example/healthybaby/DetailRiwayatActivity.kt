@@ -79,6 +79,7 @@ class DetailRiwayatActivity : AppCompatActivity() {
                     }
                 }
 
+                binding.tvFrekuensi.text = mydata.get("frekuensi").toString()
                 binding.tvMpAsi1.text = mydata.get("mp-asi 1").toString()
                 binding.tvMpAsi2.text = mydata.get("mp-asi 2").toString()
                 binding.tvMpAsi3.text = mydata.get("mp-asi 3").toString()
