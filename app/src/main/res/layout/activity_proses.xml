@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,528 +8,354 @@
     android:paddingEnd="24dp"
     tools:context=".ProsesActivity">
 
-    <ScrollView
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/linearLayout2"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="125dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="9"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:text="Frekuensi\nMP-ASI"-->
+    <!--            android:textColor="@color/white" />-->
+
+    <!--        <com.google.android.material.card.MaterialCardView-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="5"-->
+    <!--            app:strokeColor="@color/white"-->
+    <!--            app:strokeWidth="1dp"-->
+    <!--            app:cardCornerRadius="8dp"-->
+    <!--            android:backgroundTint="@android:color/transparent">-->
+
+    <!--            <com.jaredrummler.materialspinner.MaterialSpinner-->
+    <!--                android:id="@+id/spinner"-->
+    <!--                app:ms_hint="Pilih Frekuensi"-->
+    <!--                app:ms_hint_color="@color/white"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                app:ms_text_color="@color/white"-->
+    <!--                app:ms_background_color="@color/light_blue"-->
+    <!--                app:ms_arrow_tint="@color/white"-->
+    <!--                android:layout_height="wrap_content"/>-->
+    <!--        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--&lt;!&ndash;        <com.google.android.material.textfield.TextInputLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/il_frekuensi"&ndash;&gt;-->
+    <!--&lt;!&ndash;            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_weight="5"&ndash;&gt;-->
+    <!--&lt;!&ndash;            app:boxStrokeColor="@color/text_input_layout_stroke_color">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/et_frekuensi"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:inputType="number"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:maxLength="16" />&ndash;&gt;-->
+    <!--&lt;!&ndash;        </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:gravity="end"-->
+    <!--            android:text="/Hari"-->
+    <!--            android:textColor="@color/white" />-->
+    <!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="Frekuensi\nMP-ASI"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Jenis\nMP-ASI"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="6"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/light_blue">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Frekuensi\nMP-ASI"/>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_frekuensi"
+                    android:layout_width="match_parent"
+                    app:ms_hint="Pilih Frekuensi MP-ASI"
+                    app:ms_arrow_tint="@color/light_blue"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="8dp"
-                        app:strokeWidth="1dp"
-                        app:strokeColor="@color/light_blue">
-
-                        <com.jaredrummler.materialspinner.MaterialSpinner
-                            android:id="@+id/et_frekuensi"
-                            android:layout_width="match_parent"
-                            app:ms_hint="Pilih Frekuensi MP-ASI"
-                            app:ms_arrow_tint="@color/light_blue"
-                            android:layout_height="wrap_content"/>
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Karbohidrat"/>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis1"
+                    android:layout_width="match_parent"
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_text_color="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_arrow_tint="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearkarbo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:strokeColor="@color/light_blue"
+                app:strokeWidth="1dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Protein Hewani"/>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_subjenis1"
+                    android:layout_width="match_parent"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    android:textSize="12sp"
+                    app:ms_arrow_tint="@color/light_blue"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/linearprohen"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
 
-                </LinearLayout>
-            </LinearLayout>
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:id="@+id/il_jenis"-->
+            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
 
-            <LinearLayout
-                android:id="@+id/linearLayout3"
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:id="@+id/et_jenis"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:inputType="number"-->
+            <!--                    android:maxLength="16" />-->
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
+
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:inputType="number"-->
+            <!--                    android:maxLength="16" />-->
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Protein Nabati"/>
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                </LinearLayout>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis2"
+                    android:layout_width="match_parent"
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_text_color="@color/white"
+                    app:ms_hint_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
-                    android:id="@+id/linearprobi"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:strokeColor="@color/light_blue"
+                app:strokeWidth="1dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Lemak"/>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_subjenis2"
+                    android:layout_width="match_parent"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    android:textSize="12sp"
+                    app:ms_arrow_tint="@color/light_blue"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/linearlemak"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout5"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Sayuran"/>
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                </LinearLayout>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis3"
+                    android:layout_width="match_parent"
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_text_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
-                    android:id="@+id/linearsayur"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout6"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:weightSum="8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:strokeColor="@color/light_blue"
+                app:strokeWidth="1dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
-                        android:text="Buah-buahan"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearbuah"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <!--        <LinearLayout-->
-                <!--            android:layout_width="0dp"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:layout_weight="6"-->
-                <!--            android:orientation="vertical">-->
-
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                app:strokeWidth="1dp"-->
-                <!--                app:strokeColor="@color/light_blue">-->
-
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_frekuensi"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_hint="Pilih Frekuensi MP-ASI"-->
-                <!--                    app:ms_arrow_tint="@color/light_blue"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_subjenis3"
+                    android:layout_width="match_parent"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    android:textSize="12sp"
+                    app:ms_arrow_tint="@color/light_blue"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_marginTop="30dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mc_jenis4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_jenis1"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_background_color="@color/light_blue"-->
-                <!--                    app:ms_text_color="@color/white"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    app:ms_hint_color="@color/white"-->
-                <!--                    app:ms_arrow_tint="@color/white"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:strokeColor="@color/light_blue"-->
-                <!--                app:strokeWidth="1dp"-->
-                <!--                android:layout_marginTop="12dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_jenis4"
+                    android:layout_width="match_parent"
+                    app:ms_background_color="@color/light_blue"
+                    app:ms_arrow_tint="@color/white"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    app:ms_hint_color="@color/white"
+                    app:ms_text_color="@color/white"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_subjenis1"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    android:textSize="12sp"-->
-                <!--                    app:ms_arrow_tint="@color/light_blue"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeColor="@color/light_blue"
+                app:strokeWidth="1dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@android:color/transparent">
 
-
-
-                <!--            &lt;!&ndash;            <com.google.android.material.textfield.TextInputLayout&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:id="@+id/il_jenis"&ndash;&gt;-->
-                <!--&lt;!&ndash;                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:boxStrokeColor="@color/text_input_layout_stroke_color">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;                <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:id="@+id/et_jenis"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:inputType="number"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:maxLength="16" />&ndash;&gt;-->
-                <!--&lt;!&ndash;            </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;            <com.google.android.material.textfield.TextInputLayout&ndash;&gt;-->
-                <!--&lt;!&ndash;                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_marginTop="24dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:boxStrokeColor="@color/text_input_layout_stroke_color">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;                <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:inputType="number"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:maxLength="16" />&ndash;&gt;-->
-                <!--&lt;!&ndash;            </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;-->
-
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-
-                <!--                android:layout_marginTop="24dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
-
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_jenis2"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_background_color="@color/light_blue"-->
-                <!--                    app:ms_arrow_tint="@color/white"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    app:ms_text_color="@color/white"-->
-                <!--                    app:ms_hint_color="@color/white"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
-
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:strokeColor="@color/light_blue"-->
-                <!--                app:strokeWidth="1dp"-->
-                <!--                android:layout_marginTop="12dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
-
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_subjenis2"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    android:textSize="12sp"-->
-                <!--                    app:ms_arrow_tint="@color/light_blue"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/et_subjenis4"
+                    android:layout_width="match_parent"
+                    app:ms_hint="Pilih Jenis MP-ASI"
+                    android:textSize="12sp"
+                    app:ms_arrow_tint="@color/light_blue"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
+            <!--            <com.google.android.material.card.MaterialCardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:strokeColor="@color/white"-->
+            <!--                app:strokeWidth="1dp"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                app:cardCornerRadius="8dp"-->
+            <!--                android:backgroundTint="@android:color/transparent">-->
 
-                <!--                android:layout_marginTop="24dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
+            <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
+            <!--                    android:id="@+id/et_jenis4"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    app:ms_background_color="@android:color/transparent"-->
+            <!--                    app:ms_arrow_tint="@color/white"-->
+            <!--                    android:layout_height="wrap_content"/>-->
+            <!--            </com.google.android.material.card.MaterialCardView>-->
 
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_jenis3"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_background_color="@color/light_blue"-->
-                <!--                    app:ms_arrow_tint="@color/white"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    app:ms_hint_color="@color/white"-->
-                <!--                    app:ms_text_color="@color/white"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
 
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:strokeColor="@color/light_blue"-->
-                <!--                app:strokeWidth="1dp"-->
-                <!--                android:layout_marginTop="12dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:inputType="number"-->
+            <!--                    android:maxLength="16" />-->
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_subjenis3"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    android:textSize="12sp"-->
-                <!--                    app:ms_arrow_tint="@color/light_blue"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                app:boxStrokeColor="@color/text_input_layout_stroke_color">-->
 
-
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:id="@+id/mc_jenis4"-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-
-                <!--                android:layout_marginTop="24dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:visibility="gone"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
-
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_jenis4"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_background_color="@color/light_blue"-->
-                <!--                    app:ms_arrow_tint="@color/white"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    app:ms_hint_color="@color/white"-->
-                <!--                    app:ms_text_color="@color/white"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
-
-                <!--            <com.google.android.material.card.MaterialCardView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:strokeColor="@color/light_blue"-->
-                <!--                app:strokeWidth="1dp"-->
-                <!--                android:visibility="gone"-->
-                <!--                android:layout_marginTop="12dp"-->
-                <!--                app:cardCornerRadius="8dp"-->
-                <!--                android:backgroundTint="@android:color/transparent">-->
-
-                <!--                <com.jaredrummler.materialspinner.MaterialSpinner-->
-                <!--                    android:id="@+id/et_subjenis4"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    app:ms_hint="Pilih Jenis MP-ASI"-->
-                <!--                    android:textSize="12sp"-->
-                <!--                    app:ms_arrow_tint="@color/light_blue"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-                <!--            </com.google.android.material.card.MaterialCardView>-->
-
-
-                <!--            &lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:strokeColor="@color/white"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:strokeWidth="1dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_marginTop="24dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:cardCornerRadius="8dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:backgroundTint="@android:color/transparent">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;                <com.jaredrummler.materialspinner.MaterialSpinner&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:id="@+id/et_jenis4"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    app:ms_background_color="@android:color/transparent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    app:ms_arrow_tint="@color/white"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_height="wrap_content"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;-->
-
-                <!--            &lt;!&ndash;            <com.google.android.material.textfield.TextInputLayout&ndash;&gt;-->
-                <!--&lt;!&ndash;                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_marginTop="24dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:boxStrokeColor="@color/text_input_layout_stroke_color">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;                <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:inputType="number"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:maxLength="16" />&ndash;&gt;-->
-                <!--&lt;!&ndash;            </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;            <com.google.android.material.textfield.TextInputLayout&ndash;&gt;-->
-                <!--&lt;!&ndash;                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                android:layout_marginTop="24dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;                app:boxStrokeColor="@color/text_input_layout_stroke_color">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;                <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:inputType="number"&ndash;&gt;-->
-                <!--&lt;!&ndash;                    android:maxLength="16" />&ndash;&gt;-->
-                <!--&lt;!&ndash;            </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;-->
-
-                <!--        </LinearLayout>-->
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:inputType="number"-->
+            <!--                    android:maxLength="16" />-->
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
         </LinearLayout>
 
-    </ScrollView>
-
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_selanjutnya"
@@ -543,8 +369,8 @@
         android:textColor="@color/light_blue"
         app:cornerRadius="8dp"
         android:layout_marginBottom="38dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
