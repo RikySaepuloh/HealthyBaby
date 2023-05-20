@@ -37,6 +37,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutKarbo = findViewById<LinearLayout>(R.id.linearkarbo)
         val spinner = MaterialSpinner(this)
+        val parentView = spinner.parent as? ViewGroup
+        parentView?.removeView(spinner)
         spinner.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -54,6 +56,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutprohen=findViewById<LinearLayout>(R.id.linearprohen)
         val spinner2 = MaterialSpinner(this,null)
+        val parentView2 = spinner2.parent as? ViewGroup
+        parentView2?.removeView(spinner2)
         spinner2.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -71,6 +75,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutprobi=findViewById<LinearLayout>(R.id.linearprobi)
         val spinner3 = MaterialSpinner(this,null)
+        val parentView3 = spinner3.parent as? ViewGroup
+        parentView3?.removeView(spinner3)
         spinner3.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -88,6 +94,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutLemak=findViewById<LinearLayout>(R.id.linearlemak)
         val spinner4 = MaterialSpinner(this,null)
+        val parentView4 = spinner4.parent as? ViewGroup
+        parentView4?.removeView(spinner4)
         spinner4.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -105,6 +113,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutSayur=findViewById<LinearLayout>(R.id.linearsayur)
         val spinner5 = MaterialSpinner(this,null)
+        val parentView5 = spinner5.parent as? ViewGroup
+        parentView5?.removeView(spinner5)
         spinner5.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -122,6 +132,8 @@ class ProsesActivity : AppCompatActivity() {
 
         val layoutBuah=findViewById<LinearLayout>(R.id.linearkarbo)
         val spinner6 = MaterialSpinner(this,null)
+        val parentView6 = spinner6.parent as? ViewGroup
+        parentView6?.removeView(spinner6)
         spinner6.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
