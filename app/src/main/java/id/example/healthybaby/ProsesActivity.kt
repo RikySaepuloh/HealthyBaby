@@ -45,7 +45,6 @@ class ProsesActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis1+= ",${karbohidrat[position]}"
-                layoutKarbo.addView(spinner)
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
@@ -64,7 +63,7 @@ class ProsesActivity : AppCompatActivity() {
         spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis2+= ",${protein_hewani[position]}"
-                layoutprohen.addView(spinner2)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
@@ -83,7 +82,7 @@ class ProsesActivity : AppCompatActivity() {
         spinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis3+= ",${protein_nabati[position]}"
-                layoutprobi.addView(spinner3)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
@@ -102,7 +101,7 @@ class ProsesActivity : AppCompatActivity() {
         spinner4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis4+= ",${lemak[position]}"
-                layoutlemak.addView(spinner4)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
@@ -121,7 +120,7 @@ class ProsesActivity : AppCompatActivity() {
         spinner5.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis5+= ",${protein_nabati[position]}"
-                layoutsayur.addView(spinner5)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
@@ -140,7 +139,7 @@ class ProsesActivity : AppCompatActivity() {
         spinner6.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 jenis6+= ",${buah[position]}"
-                layoutbuah.addView(spinner6)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Tindakan yang dijalankan saat tidak ada item yang dipilih
