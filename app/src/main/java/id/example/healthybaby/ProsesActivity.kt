@@ -1,9 +1,7 @@
 package id.example.healthybaby
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +35,7 @@ class ProsesActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(this)
 
-        val layoutKarbo=binding.linearkarbo
+        val layoutKarbo=binding.linearkarbo.id
         val spinner = MaterialSpinner(this,null)
         spinner.layoutParams =
             LinearLayout.LayoutParams(
@@ -48,13 +46,13 @@ class ProsesActivity : AppCompatActivity() {
         spinner.setItems(karbohidrat)
         spinner.setOnItemSelectedListener { view, position, id, item ->
             jenis1+= ",$item"
-            layoutKarbo.addView(spinner)
+            (layoutKarbo as LinearLayout).addView(spinner)
         }
         if (layoutKarbo != null){
-            layoutKarbo.addView(spinner)
+            (layoutKarbo as LinearLayout).addView(spinner)
         }
 
-        val layoutprohen=binding.linearprohen
+        val layoutprohen=binding.linearprohen.id
         val spinner2 = MaterialSpinner(this,null)
         spinner2.layoutParams =
             LinearLayout.LayoutParams(
@@ -65,13 +63,13 @@ class ProsesActivity : AppCompatActivity() {
         spinner2.setItems(protein_hewani)
         spinner2.setOnItemSelectedListener { view, position, id, item ->
             jenis2+= ",$item"
-            layoutprohen.addView(spinner2)
+            (layoutprohen as LinearLayout).addView(spinner2)
         }
         if (layoutprohen != null){
-            layoutprohen.addView(spinner2)
+            (layoutprohen as LinearLayout).addView(spinner2)
         }
 
-        val layoutprobi=binding.linearprobi
+        val layoutprobi=binding.linearprobi.id
         val spinner3 = MaterialSpinner(this,null)
         spinner3.layoutParams =
             LinearLayout.LayoutParams(
@@ -82,13 +80,13 @@ class ProsesActivity : AppCompatActivity() {
         spinner3.setItems(protein_nabati)
         spinner3.setOnItemSelectedListener { view, position, id, item ->
             jenis3+= ",$item"
-            layoutprobi.addView(spinner3)
+            (layoutprobi as LinearLayout).addView(spinner3)
         }
         if (layoutprobi != null){
-            layoutprobi.addView(spinner3)
+            (layoutprobi as LinearLayout).addView(spinner3)
         }
 
-        val layoutLemak=binding.linearlemak
+        val layoutLemak=binding.linearlemak.id
         val spinner4 = MaterialSpinner(this,null)
         spinner4.layoutParams =
             LinearLayout.LayoutParams(
@@ -99,13 +97,13 @@ class ProsesActivity : AppCompatActivity() {
         spinner4.setItems(lemak)
         spinner4.setOnItemSelectedListener { view, position, id, item ->
             jenis4+= ",$item"
-            layoutLemak.addView(spinner4)
+            (layoutLemak as LinearLayout).addView(spinner4)
         }
         if (layoutLemak != null){
-            layoutLemak.addView(spinner4)
+            (layoutLemak as LinearLayout).addView(spinner4)
         }
 
-        val layoutSayur=binding.linearsayur
+        val layoutSayur=binding.linearsayur.id
         val spinner5 = MaterialSpinner(this,null)
         spinner5.layoutParams =
             LinearLayout.LayoutParams(
@@ -116,13 +114,13 @@ class ProsesActivity : AppCompatActivity() {
         spinner5.setItems(sayuran)
         spinner5.setOnItemSelectedListener { view, position, id, item ->
             jenis5+= ",$item"
-            layoutSayur.addView(spinner5)
+            (layoutSayur as LinearLayout).addView(spinner5)
         }
         if (layoutSayur != null){
-            layoutSayur.addView(spinner5)
+            (layoutSayur as LinearLayout).addView(spinner5)
         }
 
-        val layoutBuah=binding.linearbuah
+        val layoutBuah=binding.linearbuah.id
         val spinner6 = MaterialSpinner(this,null)
         spinner6.layoutParams =
             LinearLayout.LayoutParams(
@@ -133,10 +131,10 @@ class ProsesActivity : AppCompatActivity() {
         spinner6.setItems(buah)
         spinner6.setOnItemSelectedListener { view, position, id, item ->
             jenis6+= ",$item"
-            layoutBuah.addView(spinner6)
+            (layoutBuah as LinearLayout).addView(spinner6)
         }
         if (layoutBuah != null){
-            layoutBuah.addView(spinner6)
+            (layoutBuah as LinearLayout).addView(spinner6)
         }
 
 
