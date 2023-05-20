@@ -127,119 +127,6 @@ class ProsesActivity : AppCompatActivity() {
                 jenis4=item1.toString()
             }
         }
-//
-//        val spinner = Spinner(this)
-//        val layoutKarbo = findViewById<LinearLayout>(R.id.linearkarbo)
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, karbohidrat)
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner.adapter = adapter
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis1+= ",${karbohidrat[position]}"
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutKarbo != null){
-//            layoutKarbo.addView(spinner)
-//        }
-//
-//        val spinner2 = Spinner(this)
-//        val layoutprohen = findViewById<LinearLayout>(R.id.linearprohen)
-//        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, protein_hewani)
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner2.adapter = adapter2
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis2+= ",${protein_hewani[position]}"
-//
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutprohen != null){
-//            layoutprohen.addView(spinner2)
-//        }
-//
-//        val spinner3 = Spinner(this)
-//        val layoutprobi = findViewById<LinearLayout>(R.id.linearprobi)
-//        val adapter3 = ArrayAdapter(this, android.R.layout.simple_spinner_item, protein_nabati)
-//        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner3.adapter = adapter3
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis3+= ",${protein_nabati[position]}"
-//
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutprobi != null){
-//            layoutprobi.addView(spinner3)
-//        }
-//
-//        val spinner4 = Spinner(this)
-//        val layoutlemak = findViewById<LinearLayout>(R.id.linearlemak)
-//        val adapter4 = ArrayAdapter(this, android.R.layout.simple_spinner_item, lemak)
-//        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner4.adapter = adapter4
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis4+= ",${lemak[position]}"
-//
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutlemak != null){
-//            layoutlemak.addView(spinner4)
-//        }
-//
-//        val spinner5 = Spinner(this)
-//        val layoutsayur = findViewById<LinearLayout>(R.id.linearsayur)
-//        val adapter5 = ArrayAdapter(this, android.R.layout.simple_spinner_item, sayuran)
-//        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner5.adapter = adapter5
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner5.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis5+= ",${protein_nabati[position]}"
-//
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutsayur != null){
-//            layoutsayur.addView(spinner5)
-//        }
-//
-//        val spinner6 = Spinner(this)
-//        val layoutbuah = findViewById<LinearLayout>(R.id.linearbuah)
-//        val adapter6 = ArrayAdapter(this, android.R.layout.simple_spinner_item, buah)
-//        adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner6.adapter = adapter6
-//// Atur tindakan yang akan dijalankan saat item dipilih dalam spinner
-//        spinner6.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                jenis6+= ",${buah[position]}"
-//
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                // Tindakan yang dijalankan saat tidak ada item yang dipilih
-//            }
-//        }
-//        if (layoutbuah != null){
-//            layoutbuah.addView(spinner6)
-//        }
 
 
         if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
@@ -288,7 +175,7 @@ class ProsesActivity : AppCompatActivity() {
                 } catch (e: Exception) {
                     preferences.saveJenis6(jenis6)
                 }
-                if (getAge(preferences.getTanggalLahir().toString()) < 9 ){
+                if (getMonthFromBirthdate(preferences.getTanggalLahir().toString()) < 9 ){
                     when (frekuensi) {
                         "<2x per hari" -> {
                             preferences.saveHasilJenis("Kurang")
