@@ -38,7 +38,7 @@ class ProsesActivity : AppCompatActivity() {
         preferences.setPreferences(this)
 
         val layoutKarbo=binding.linearkarbo
-        val spinner = MaterialSpinner(this)
+        val spinner = MaterialSpinner(this,null)
         spinner.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -55,7 +55,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
         val layoutprohen=binding.linearprohen
-        val spinner2 = MaterialSpinner(this)
+        val spinner2 = MaterialSpinner(this,null)
         spinner2.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -72,7 +72,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
         val layoutprobi=binding.linearprobi
-        val spinner3 = MaterialSpinner(this)
+        val spinner3 = MaterialSpinner(this,null)
         spinner3.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -89,7 +89,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
         val layoutLemak=binding.linearlemak
-        val spinner4 = MaterialSpinner(this)
+        val spinner4 = MaterialSpinner(this,null)
         spinner4.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -106,7 +106,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
         val layoutSayur=binding.linearsayur
-        val spinner5 = MaterialSpinner(this)
+        val spinner5 = MaterialSpinner(this,null)
         spinner5.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -123,7 +123,7 @@ class ProsesActivity : AppCompatActivity() {
         }
 
         val layoutBuah=binding.linearbuah
-        val spinner6 = MaterialSpinner(this)
+        val spinner6 = MaterialSpinner(this,null)
         spinner6.layoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
