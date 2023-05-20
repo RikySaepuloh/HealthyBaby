@@ -175,7 +175,7 @@ class ProsesActivity : AppCompatActivity() {
                 } catch (e: Exception) {
                     preferences.saveJenis6(jenis6)
                 }
-                if (getMonthFromBirthdate(preferences.getTanggalLahir().toString()) < 9 ){
+                if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
                     when (frekuensi) {
                         "<2x per hari" -> {
                             preferences.saveHasilJenis("Kurang")
