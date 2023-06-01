@@ -14,21 +14,16 @@ import id.example.healthybaby.databinding.ActivityProsesBinding
 class ProsesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProsesBinding
     var frekuensi = ""
-    var jenis1 = ""
-    var jenis2 = ""
-    var jenis3 = ""
-    var jenis4 = ""
-    var jenis5 = ""
-    var jenis6 = ""
     val preferences = Preferences()
-    val karbohidrat = arrayListOf("Bihun", "Bubur Beras", "Kentang", "Makaroni", "Mie Basah", "Mie Kering", "Nasi", "Nasi Tim", "Roti Putih","Singkong","Talas","Tepung Beras","Tepung Terigu","Tepung Hunkwee","Ubi")
-    val protein_hewani = arrayListOf("Ayam Tanpa Kulit","Babat" ,"Cumi-cumi","Daging Kerbau","Ikan asin","Ikan kakap","Ikan kembung","Ikan lele","Ikan mas","Ikan mujair","Ikan peda","Ikan pindang","Ikan segar","Kerang","Udang basah","Bakso","Daging kambing","Daging sapi","Hati ayam","Hati sapi","Otak","Telur ayam","Telur bebek","Ayam dengan kulit","Bebek","Kuning telur")
-    val protein_nabati = arrayListOf("Kacang hijau","Kacang kedelai","Kacang merah segar","Kacang tanah","Tahu","Tempe")
-    val lemak = arrayListOf("Mentega","Minyak bunga matahari","Minyak jagung","Minyak kedele","Minyak kelapa","Minyak kelapa sawit","Minyak zaitun","Santan")
-    val sayuran = arrayListOf("Gambas","Jamur kuping","Tomat sayur","Oyong" ,"Ketimun"	,"Labu air","Selada air","Selada","Lobak","Daun bawang","Bayam","Bit","Labu waluh","Genjer", "Kapri muda","Kol", "Daun talas","Jagung muda", "Brokoli","Daun kecipir","Pepaya muda","Sawi","Kembang kol","Buncis","Labu siam","Rebung","Kemangi","Daun kacang panjang","Pare","Toge","Kangkung","Terong","Kacang panjang","Wortel","Bayam merah","Mangkokan","Nangka muda","Daun pepaya", "Daun katuk","Kacang kapri","Melinjo","Toge kedelai", "Daun melinjo","Daun talas","Kluwih","Daun singkong")
-    val buah = arrayListOf("Avokado","Anggur","Apel merah","Apel malang","Belimbing","Blewah","Duku","Durian","Jambu air","Jambu bol","Jeruk balik","Jerut garut","Jeruk manis","Kedondong","Kurma","Leci","Mangga","Manggis","Markisa","Melon","Nangka masak","Nanas","Pear","Pepaya","Pisang ambon","Pisang kepok","Pisan mas","Pisang raja","Rambutan","Sawo","Salak","Semangka","Sirsak","Srikaya","Stroberi")
-    val frek1 = arrayListOf("<2x per hari","2x per hari", "3x per hari")
-    val frek2 = arrayListOf("2x per hari", "3x per hari","4x per hari")
+    var tekstur=""
+    var karbo=""
+    var proteinn=""
+    var proteinh=""
+    var sayur=""
+    var lemak=""
+    var buah=""
+    var takaran=""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,170 +31,132 @@ class ProsesActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferences.setPreferences(this)
 
-        val spinner1 = binding.etJenis1
-        spinner1.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
-        spinner1.setOnItemSelectedListener { view, position, id, item ->
-            if (item.toString()=="Karbohidrat"){
-                binding.etSubjenis1.setItems(karbohidrat)
-            }else if (item.toString()=="Protein Hewani"){
-                binding.etSubjenis1.setItems(protein_hewani)
-            }else if (item.toString()=="Protein Nabati"){
-                binding.etSubjenis1.setItems(protein_nabati)
-            }else if (item.toString()=="Lemak"){
-                binding.etSubjenis1.setItems(lemak)
-            }else if (item.toString()=="Sayuran"){
-                binding.etSubjenis1.setItems(sayuran)
-            }else if (item.toString()=="Buah-buahan"){
-                binding.etSubjenis1.setItems(buah)
-            }else{
-                binding.etSubjenis1.setItems(karbohidrat)
-            }
-            binding.etSubjenis1.setOnItemSelectedListener { view1, position1, id1, item1 ->
-                jenis1=item1.toString()
-            }
-        }
 
-        val spinner2 = binding.etJenis2
-        spinner2.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
-        spinner2.setOnItemSelectedListener { view, position, id, item ->
-            if (item.toString()=="Karbohidrat"){
-                binding.etSubjenis2.setItems(karbohidrat)
-            }else if (item.toString()=="Protein Hewani"){
-                binding.etSubjenis2.setItems(protein_hewani)
-            }else if (item.toString()=="Protein Nabati"){
-                binding.etSubjenis2.setItems(protein_nabati)
-            }else if (item.toString()=="Lemak"){
-                binding.etSubjenis2.setItems(lemak)
-            }else if (item.toString()=="Sayuran"){
-                binding.etSubjenis2.setItems(sayuran)
-            }else if (item.toString()=="Buah-buahan"){
-                binding.etSubjenis2.setItems(buah)
-            }else{
-                binding.etSubjenis2.setItems(karbohidrat)
-            }
-            binding.etSubjenis2.setOnItemSelectedListener { view1, position1, id1, item1 ->
-                jenis2=item1.toString()
-            }
-        }
-
-        val spinner3 = binding.etJenis3
-        spinner3.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
-        spinner3.setOnItemSelectedListener { view, position, id, item ->
-            if (item.toString()=="Karbohidrat"){
-                binding.etSubjenis3.setItems(karbohidrat)
-            }else if (item.toString()=="Protein Hewani"){
-                binding.etSubjenis3.setItems(protein_hewani)
-            }else if (item.toString()=="Protein Nabati"){
-                binding.etSubjenis3.setItems(protein_nabati)
-            }else if (item.toString()=="Lemak"){
-                binding.etSubjenis3.setItems(lemak)
-            }else if (item.toString()=="Sayuran"){
-                binding.etSubjenis3.setItems(sayuran)
-            }else if (item.toString()=="Buah-buahan"){
-                binding.etSubjenis3.setItems(buah)
-            }else{
-                binding.etSubjenis3.setItems(karbohidrat)
-            }
-            binding.etSubjenis3.setOnItemSelectedListener { view1, position1, id1, item1 ->
-                jenis3=item1.toString()
-            }
-        }
-
-        val spinner4 = binding.etJenis4
-        spinner4.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
-        spinner4.setOnItemSelectedListener { view, position, id, item ->
-            if (item.toString()=="Karbohidrat"){
-                binding.etSubjenis4.setItems(karbohidrat)
-            }else if (item.toString()=="Protein Hewani"){
-                binding.etSubjenis4.setItems(protein_hewani)
-            }else if (item.toString()=="Protein Nabati"){
-                binding.etSubjenis4.setItems(protein_nabati)
-            }else if (item.toString()=="Lemak"){
-                binding.etSubjenis4.setItems(lemak)
-            }else if (item.toString()=="Sayuran"){
-                binding.etSubjenis4.setItems(sayuran)
-            }else if (item.toString()=="Buah-buahan"){
-                binding.etSubjenis4.setItems(buah)
-            }else{
-                binding.etSubjenis4.setItems(karbohidrat)
-            }
-            binding.etSubjenis4.setOnItemSelectedListener { view1, position1, id1, item1 ->
-                jenis4=item1.toString()
-            }
-        }
-
-
-        if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
-            binding.etFrekuensi.setItems(frek1)
-        }else{
-            binding.etFrekuensi.setItems(frek2)
-        }
-        binding.etFrekuensi.setOnItemSelectedListener { view, position, id, item ->
-            frekuensi=item.toString()
-        }
+//
+//        val spinner1 = binding.etJenis1
+//        spinner1.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
+//        spinner1.setOnItemSelectedListener { view, position, id, item ->
+//            if (item.toString()=="Karbohidrat"){
+//                binding.etSubjenis1.setItems(karbohidrat)
+//            }else if (item.toString()=="Protein Hewani"){
+//                binding.etSubjenis1.setItems(protein_hewani)
+//            }else if (item.toString()=="Protein Nabati"){
+//                binding.etSubjenis1.setItems(protein_nabati)
+//            }else if (item.toString()=="Lemak"){
+//                binding.etSubjenis1.setItems(lemak)
+//            }else if (item.toString()=="Sayuran"){
+//                binding.etSubjenis1.setItems(sayuran)
+//            }else if (item.toString()=="Buah-buahan"){
+//                binding.etSubjenis1.setItems(buah)
+//            }else{
+//                binding.etSubjenis1.setItems(karbohidrat)
+//            }
+//            binding.etSubjenis1.setOnItemSelectedListener { view1, position1, id1, item1 ->
+//                jenis1=item1.toString()
+//            }
+//        }
+//
+//        val spinner2 = binding.etJenis2
+//        spinner2.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
+//        spinner2.setOnItemSelectedListener { view, position, id, item ->
+//            if (item.toString()=="Karbohidrat"){
+//                binding.etSubjenis2.setItems(karbohidrat)
+//            }else if (item.toString()=="Protein Hewani"){
+//                binding.etSubjenis2.setItems(protein_hewani)
+//            }else if (item.toString()=="Protein Nabati"){
+//                binding.etSubjenis2.setItems(protein_nabati)
+//            }else if (item.toString()=="Lemak"){
+//                binding.etSubjenis2.setItems(lemak)
+//            }else if (item.toString()=="Sayuran"){
+//                binding.etSubjenis2.setItems(sayuran)
+//            }else if (item.toString()=="Buah-buahan"){
+//                binding.etSubjenis2.setItems(buah)
+//            }else{
+//                binding.etSubjenis2.setItems(karbohidrat)
+//            }
+//            binding.etSubjenis2.setOnItemSelectedListener { view1, position1, id1, item1 ->
+//                jenis2=item1.toString()
+//            }
+//        }
+//
+//        val spinner3 = binding.etJenis3
+//        spinner3.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
+//        spinner3.setOnItemSelectedListener { view, position, id, item ->
+//            if (item.toString()=="Karbohidrat"){
+//                binding.etSubjenis3.setItems(karbohidrat)
+//            }else if (item.toString()=="Protein Hewani"){
+//                binding.etSubjenis3.setItems(protein_hewani)
+//            }else if (item.toString()=="Protein Nabati"){
+//                binding.etSubjenis3.setItems(protein_nabati)
+//            }else if (item.toString()=="Lemak"){
+//                binding.etSubjenis3.setItems(lemak)
+//            }else if (item.toString()=="Sayuran"){
+//                binding.etSubjenis3.setItems(sayuran)
+//            }else if (item.toString()=="Buah-buahan"){
+//                binding.etSubjenis3.setItems(buah)
+//            }else{
+//                binding.etSubjenis3.setItems(karbohidrat)
+//            }
+//            binding.etSubjenis3.setOnItemSelectedListener { view1, position1, id1, item1 ->
+//                jenis3=item1.toString()
+//            }
+//        }
+//
+//        val spinner4 = binding.etJenis4
+//        spinner4.setItems("Karbohidrat","Protein Hewani","Protein Nabati","Lemak","Sayuran","Buah-buahan")
+//        spinner4.setOnItemSelectedListener { view, position, id, item ->
+//            if (item.toString()=="Karbohidrat"){
+//                binding.etSubjenis4.setItems(karbohidrat)
+//            }else if (item.toString()=="Protein Hewani"){
+//                binding.etSubjenis4.setItems(protein_hewani)
+//            }else if (item.toString()=="Protein Nabati"){
+//                binding.etSubjenis4.setItems(protein_nabati)
+//            }else if (item.toString()=="Lemak"){
+//                binding.etSubjenis4.setItems(lemak)
+//            }else if (item.toString()=="Sayuran"){
+//                binding.etSubjenis4.setItems(sayuran)
+//            }else if (item.toString()=="Buah-buahan"){
+//                binding.etSubjenis4.setItems(buah)
+//            }else{
+//                binding.etSubjenis4.setItems(karbohidrat)
+//            }
+//            binding.etSubjenis4.setOnItemSelectedListener { view1, position1, id1, item1 ->
+//                jenis4=item1.toString()
+//            }
+//        }
+//
+//
+//        if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
+//            binding.etFrekuensi.setItems(frek1)
+//        }else{
+//            binding.etFrekuensi.setItems(frek2)
+//        }
+//        binding.etFrekuensi.setOnItemSelectedListener { view, position, id, item ->
+//            frekuensi=item.toString()
+//        }
 
         binding.btnSelanjutnya.setOnClickListener {
-            if (frekuensi==""){
-                Snackbar.make(binding.root,"Anda belum memilih frekuensi",Snackbar.LENGTH_LONG).show()
-            }else if(jenis1 == "" || jenis2 == "" || jenis3 == ""){
-                Snackbar.make(binding.root,"Anda belum jenis MP-ASI",Snackbar.LENGTH_LONG).show()
+            frekuensi=binding.etFrekuens.text.toString()
+            tekstur=binding.etTekstur.text.toString()
+            karbo=binding.etKarbo.text.toString()
+            proteinh=binding.etProteinh.text.toString()
+            proteinn=binding.etProteinn.text.toString()
+            sayur=binding.etSayuran.text.toString()
+            lemak=binding.etLemak.text.toString()
+            buah=binding.etBuah.text.toString()
+            takaran=binding.etTakaran.text.toString()
+            if (frekuensi==""||tekstur==""||karbo==""||proteinh==""||proteinn==""||sayur==""||lemak==""||buah==""||takaran==""){
+                Snackbar.make(binding.root,"Masih terdapat data yang belum terisi!",Snackbar.LENGTH_LONG).show()
             }else{
                 preferences.saveFrekuensi(frekuensi)
-                try {
-                    preferences.saveJenis1(jenis1.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis1(jenis1)
-                }
-                try {
-                    preferences.saveJenis2(jenis2.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis2(jenis2)
-                }
-                try {
-                    preferences.saveJenis3(jenis3.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis3(jenis3)
-                }
-                try {
-                    preferences.saveJenis4(jenis4.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis4(jenis4)
-                }
-                try {
-                    preferences.saveJenis5(jenis5.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis5(jenis5)
-                }
-                try {
-                    preferences.saveJenis6(jenis6.replaceFirst(",",""))
-                } catch (e: Exception) {
-                    preferences.saveJenis6(jenis6)
-                }
-                if (getMonthFromBirthdate(preferences.getTanggalLahir()) < 9 ){
-                    when (frekuensi) {
-                        "<2x per hari" -> {
-                            preferences.saveHasilJenis("Kurang")
-                        }
-                        "2x per hari" -> {
-                            preferences.saveHasilJenis("Cukup")
-                        }
-                        else -> {
-                            preferences.saveHasilJenis("Baik")
-                        }
-                    }
-                }else{
-                    when (frekuensi) {
-                        "2x per hari" -> {
-                            preferences.saveHasilJenis("Kurang")
-                        }
-                        "3x per hari" -> {
-                            preferences.saveHasilJenis("Cukup")
-                        }
-                        else -> {
-                            preferences.saveHasilJenis("Baik")
-                        }
-                    }
-                }
+                preferences.saveTekstur(tekstur)
+                preferences.saveKarbo(karbo)
+                preferences.saveProteinh(proteinh)
+                preferences.saveProteinn(proteinn)
+                preferences.saveSayur(sayur)
+                preferences.saveLemak(lemak)
+                preferences.saveBuah(buah)
+                preferences.saveTakaran(takaran)
                 startActivity(Intent(this,ResultActivity::class.java))
             }
         }

@@ -80,26 +80,13 @@ class DetailRiwayatActivity : AppCompatActivity() {
                 }
 
                 binding.tvFrekuensi.text = mydata.get("frekuensi").toString()
-                binding.tvMpAsi1.text = mydata.get("mp-asi 1").toString()
-                binding.tvMpAsi2.text = mydata.get("mp-asi 2").toString()
-                binding.tvMpAsi3.text = mydata.get("mp-asi 3").toString()
-                binding.tvMpAsi3.text = mydata.get("mp-asi 4").toString()
-
-                val hasiljenis = mydata.get("hasil mp-asi").toString()
-
-                binding.tvStatusMpasi.text = hasiljenis
-                when (hasiljenis) {
-                    "Kurang" -> {
-                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.red))
-                    }
-                    "Cukup" -> {
-                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
-                    }
-                    else -> {
-                        binding.tvStatusMpasi.setTextColor(ContextCompat.getColor(this,R.color.green))
-                    }
-                }
-
+                binding.tvKarbo.text = mydata.get("karbo").toString()
+                binding.tvProteinh.text = mydata.get("proteinh").toString()
+                binding.tvProteinn.text = mydata.get("proteinn").toString()
+                binding.tvSayur.text = mydata.get("sayur").toString()
+                binding.tvLemak.text = mydata.get("lemak").toString()
+                binding.tvBuah.text = mydata.get("buah").toString()
+                binding.tvTakaran.text = mydata.get("takaran").toString()
                 binding.tvNilaiGizi.text = mydata["nilai gizi"].toString()
                 binding.tvNilaiTinggi.text = mydata["nilai tinggi"].toString()
                 binding.tvImt.text = mydata["imt"].toString()

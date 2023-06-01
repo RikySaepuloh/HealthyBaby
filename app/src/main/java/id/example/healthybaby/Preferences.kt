@@ -20,6 +20,15 @@ class Preferences {
     private var nama = "nama"
     private var tb = "tb"
     private var bb = "bb"
+    private var tekstur="tekstur"
+    private var karbo="karbo"
+    private var proteinn="proteinn"
+    private var proteinh="proteinh"
+    private var sayur="sayur"
+    private var lemak="lemak"
+    private var buah="buah"
+    private var takaran="takaran"
+    private var sendok="sendok"
     private var jenis1 = "jenis1"
     private var jenis2 = "jenis2"
     private var jenis3 = "jenis3"
@@ -88,6 +97,51 @@ class Preferences {
 
     fun saveFrekuensi(value: String?) {
         spEditor!!.putString(frekuensi, value)
+        spEditor!!.commit()
+    }
+
+    fun saveTekstur(value: String?) {
+        spEditor!!.putString(tekstur, value)
+        spEditor!!.commit()
+    }
+
+    fun saveKarbo(value: String?) {
+        spEditor!!.putString(karbo, value)
+        spEditor!!.commit()
+    }
+
+    fun saveProteinn(value: String?) {
+        spEditor!!.putString(proteinn, value)
+        spEditor!!.commit()
+    }
+
+    fun saveProteinh(value: String?) {
+        spEditor!!.putString(proteinh, value)
+        spEditor!!.commit()
+    }
+
+    fun saveSayur(value: String?) {
+        spEditor!!.putString(sayur, value)
+        spEditor!!.commit()
+    }
+
+    fun saveLemak(value: String?) {
+        spEditor!!.putString(lemak, value)
+        spEditor!!.commit()
+    }
+
+    fun saveBuah(value: String?) {
+        spEditor!!.putString(buah, value)
+        spEditor!!.commit()
+    }
+
+    fun saveTakaran(value: String?) {
+        spEditor!!.putString(takaran, value)
+        spEditor!!.commit()
+    }
+
+    fun saveSendok(value: String?) {
+        spEditor!!.putString(sendok, value)
         spEditor!!.commit()
     }
 
@@ -252,6 +306,34 @@ class Preferences {
 
     fun getFrekuensi(): String? {
         return sp!!.getString(frekuensi, "N/A")
+    }
+
+    fun getKarbo(): String? {
+        return sp!!.getString(karbo, "N/A")
+    }
+
+    fun getProteinh(): String? {
+        return sp!!.getString(proteinh, "N/A")
+    }
+
+    fun getProteinn(): String? {
+        return sp!!.getString(proteinn, "N/A")
+    }
+
+    fun getSayur(): String? {
+        return sp!!.getString(sayur, "N/A")
+    }
+
+    fun getLemak(): String? {
+        return sp!!.getString(lemak, "N/A")
+    }
+
+    fun getTakaran(): String? {
+        return sp!!.getString(takaran, "N/A")
+    }
+
+    fun getBuah(): String? {
+        return sp!!.getString(buah, "N/A")
     }
 
     fun getTB(): String? {

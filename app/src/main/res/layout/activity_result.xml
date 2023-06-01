@@ -462,7 +462,7 @@
                                 android:text="Karbohidrat"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi1"
+                                android:id="@+id/tv_karbo"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -484,7 +484,7 @@
                                 android:text="Protein Hewani"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi2"
+                                android:id="@+id/tv_proteinh"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -506,7 +506,7 @@
                                 android:text="Protein Nabati"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi3"
+                                android:id="@+id/tv_proteinn"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -528,7 +528,7 @@
                                 android:text="Lemak"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi4"
+                                android:id="@+id/tv_lemak"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -550,7 +550,7 @@
                                 android:text="Sayuran"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi5"
+                                android:id="@+id/tv_sayur"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -572,7 +572,7 @@
                                 android:text="Buah-buahan"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi6"
+                                android:id="@+id/tv_buah"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -580,7 +580,6 @@
                                 android:text="-"/>
 
                         </LinearLayout>
-
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -592,10 +591,10 @@
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Status MP-ASI"/>
+                                android:text="Takaran MP-ASI"/>
 
                             <TextView
-                                android:id="@+id/tv_mp_asi"
+                                android:id="@+id/tv_takaran"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:gravity="end"
@@ -604,6 +603,27 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:weightSum="2">
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Jumlah Sendok"/>
+
+                            <TextView
+                                android:id="@+id/tv_sendok"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

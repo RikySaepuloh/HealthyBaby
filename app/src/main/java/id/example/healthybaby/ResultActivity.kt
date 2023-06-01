@@ -29,7 +29,6 @@ class ResultActivity : AppCompatActivity() {
         binding.tvUsia.text = "$usia bulan"
         statusGizi()
         statusTinggi()
-        statusMPAsi()
 
         binding.btnSimpan.setOnClickListener {
             saveResult()
@@ -48,21 +47,6 @@ class ResultActivity : AppCompatActivity() {
     }
 
 
-    fun statusMPAsi(){
-        var hasiljenis = preferences.getHasilJenis()
-        binding.tvMpAsi.text = hasiljenis
-        when (hasiljenis) {
-            "Kurang" -> {
-                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.red))
-            }
-            "Cukup" -> {
-                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.yellow))
-            }
-            else -> {
-                binding.tvMpAsi.setTextColor(ContextCompat.getColor(this,R.color.green))
-            }
-        }
-    }
 
     fun saveResult(){
         val db = Firebase.firestore
@@ -86,10 +70,13 @@ class ResultActivity : AppCompatActivity() {
             "status tinggi" to statusTinggi,
             "nilai tinggi" to nilaiTinggi.toDouble(),
             "nilai gizi" to nilaiGizi.toDouble(),
-            "mp-asi 1" to preferences.getJenis1(),
-            "mp-asi 2" to preferences.getJenis2(),
-            "mp-asi 3" to preferences.getJenis3(),
-            "mp-asi 4" to preferences.getJenis4(),
+            "karbo" to preferences.getKarbo(),
+            "proteinh" to preferences.getProteinh(),
+            "proteinn" to preferences.getProteinn(),
+            "sayuran" to preferences.getSayur(),
+            "lemak" to preferences.getLemak(),
+            "takaran" to preferences.getTakaran(),
+            "buah" to preferences.getBuah(),
             "frekuensi" to preferences.getFrekuensi(),
             "hasil mp-asi" to preferences.getHasilJenis(),
             "imt" to imt,
@@ -123,12 +110,13 @@ class ResultActivity : AppCompatActivity() {
         binding.tvTb.text = preferences.getTB()
         binding.tvBb.text = preferences.getBB()
         binding.tvFrekuensi.text = preferences.getFrekuensi()
-        binding.tvMpAsi1.text = preferences.getJenis1()
-        binding.tvMpAsi2.text = preferences.getJenis2()
-        binding.tvMpAsi3.text = preferences.getJenis3()
-        binding.tvMpAsi4.text = preferences.getJenis4()
-        binding.tvMpAsi5.text = preferences.getJenis5()
-        binding.tvMpAsi6.text = preferences.getJenis6()
+        binding.tvKarbo.text = preferences.getKarbo()
+        binding.tvProteinh.text = preferences.getProteinh()
+        binding.tvProteinn.text = preferences.getProteinn()
+        binding.tvSayur.text = preferences.getSayur()
+        binding.tvLemak.text = preferences.getLemak()
+        binding.tvBuah.text = preferences.getBuah()
+        binding.tvTakaran.text = preferences.getTakaran()
         binding.tvStatusTinggi.text = statusTinggi
         val berat = preferences.getBB()!!.toDouble()
         val panjang = preferences.getTB()!!.toDouble()
@@ -280,7 +268,7 @@ class ResultActivity : AppCompatActivity() {
             val sd3plus = arrayListOf(55.6,60.6,64.4,67.6,70.1,72.2,74.0,75.7,77.2,78.7,80.1,81.5,82.9,84.2,85.5,86.7,88.0,89.2,90.4,91.5,92.6,93.8,94.9,95.9,97.0)
 
             try {
-                if(panjang < median[0]){
+                if(panjang < median[usia]){
                     val nilaistatus = (panjang - median[usia]) / (median[usia] - (sd1min[usia]))
                     nilaiTinggi = nilaistatus.toString()
                     statusTinggi = if (nilaistatus <= -3){
@@ -322,7 +310,7 @@ class ResultActivity : AppCompatActivity() {
 
 
             try {
-                if(panjang < median[0]){
+                if(panjang < median[usia]){
                     val nilaistatus = (panjang - median[usia]) / (median[usia] - (sd1min[usia]))
                     nilaiTinggi = nilaistatus.toString()
                     statusTinggi = if (nilaistatus <= -3){
