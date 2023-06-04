@@ -164,6 +164,7 @@ class ResultActivity : AppCompatActivity() {
             val sd3plus = arrayListOf(18.1,19.4,21.1,21.8,22.1,22.3,22.3, 22.3, 22.2, 22.1, 22.0, 21.8, 21.6, 21.5, 21.3, 21.2, 21.0, 20.9, 20.8, 20.7, 20.6, 20.5, 20.4, 20.3, 20.3)
             try {
                 if(imt < median[usia]){
+
                     val nilaistatus = (imt - median[usia]) / (median[usia] - (sd1min[usia]))
                     Log.e("nilai status",(imt - median[usia]).toString() + " / " + (median[usia] - sd1min[usia]).toString())
                     nilaiGizi = nilaistatus.toString()
@@ -260,8 +261,8 @@ class ResultActivity : AppCompatActivity() {
         val panjang = preferences.getTB()!!.toDouble()
         if (preferences.getJenisKelamin() == "Laki-Laki"){
             val median = arrayListOf(49.9,54.7,58.4,61.4,63.9,65.9,67.6,69.2,70.6,72.0,73.3,74.5,75.7,76.9,78.0,79.3,80.2,81.2,82.3,83.2,84.2,85.1,86.0,86.9,87.9)
-            val sd3min = arrayListOf(44.2,48.9,52.4,55.3,57.6,59.6,61.2, 62.7, 64.0, 65.2, 66.4, 67.6, 68.6,69.6,70.6, 71.6,72.5,73.3,74.2,75.0, 75.8, 76.5, 77.2, 78.0, 78.7)
-            val sd2min = arrayListOf(46.1,50.8,54.4,57.3,59.7,61.7,63.3,64.8,66.2,67.5,68.7,69.9,71.0,72.0,72.1,73.1,74.1,75.0,76.0,76.9,77.7,78.6,79.4,80.2,81.0,81.7)
+            val sd3min = arrayListOf(44.2,48.9,52.4,55.3,57.6,59.6,61.2,62.7,64.0,65.2,66.4,67.6,68.6,69.6,70.6,71.6,72.5,73.3,74.2,75.0,75.8,76.5,77.2,78.0,78.7)
+            val sd2min = arrayListOf(46.1,50.8,54.4,57.3,59.7,61.7,63.3,64.8,66.2,67.5,68.7,69.9,71.0,72.1,73.1,74.1,75.0,76.0,76.9,77.7,78.6,79.4,80.2,81.0,81.7)
             val sd1min = arrayListOf(48.0,52.8,56.4,59.4,61.8,63.8,65.5,67.0,68.4,69.7,71.0,72.2,73.4,74.5,75.6,76.6,77.6,78.6,79.6,80.5,81.4,82.3,83.1,83.9,84.8)
             val sd1plus = arrayListOf(51.8,56.7,60.4,63.5,66.0,68.0,69.8,71.3,72.8,74.2,75.6,76.9,78.1,79.3,80.5,81.7,82.8,83.9,85.0,86.0,87.0,88.0,89.0,89.9,90.9)
             val sd2plus = arrayListOf(53.7,58.6,62.4,65.5,68.0,70.1,71.9,73.5,75.0,76.5,77.9,79.2,80.5,81.8,83.0,84.2,85.4,86.5,87.7,88.8,89.8,90.9,91.9,92.9,93.9)
@@ -281,8 +282,11 @@ class ResultActivity : AppCompatActivity() {
                         "Tinggi"
                     }
                     Log.e("Median",median[usia].toString())
+                    Log.e("Nilai Tinggi",nilaiTinggi.toString())
+                    Log.e("Panjang",panjang.toString())
+                    Log.e("sd3min",sd3min[usia].toString())
                 }else{
-                    val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] + (median[usia]))
+                    val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] - (median[usia]))
                     nilaiTinggi = nilaistatus.toString()
                     statusTinggi = if (nilaistatus <= -3){
                         "Sangat Pendek"
@@ -294,6 +298,9 @@ class ResultActivity : AppCompatActivity() {
                         "Tinggi"
                     }
                     Log.e("Median",median[usia].toString())
+                    Log.e("Nilai Tinggi",nilaiTinggi)
+                    Log.e("Panjang",panjang.toString())
+                    Log.e("sd1plus",sd1plus[usia].toString())
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
