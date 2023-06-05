@@ -7,18 +7,27 @@
     android:background="@color/light_blue"
     tools:context=".WelcomeActivity">
 
-    <TextView
-        android:id="@+id/tv_title"
+    <LinearLayout
+        android:id="@+id/ln_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:text="@string/healthy_baby"
-        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:gravity="center"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Healthy\nBaby"
+            android:textSize="48sp"
+            />
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="200dp"
@@ -37,12 +46,12 @@
         android:text="@string/mulai"
         android:textAllCaps="false"
         android:insetTop="0dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/light_blue"
         app:cornerRadius="8dp"
         android:insetBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/tv_title"
-        app:layout_constraintStart_toStartOf="@id/tv_title" />
+        app:layout_constraintEnd_toEndOf="@id/ln_a"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/light_blue"
+        app:layout_constraintStart_toStartOf="@id/ln_a" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -330,7 +330,7 @@ class ResultActivity : AppCompatActivity() {
                         "Tinggi"
                     }
                 }else{
-                    val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] + (median[usia]))
+                    val nilaistatus = (panjang - median[usia]) / (sd1plus[usia] - (median[usia]))
                     nilaiTinggi = nilaistatus.toString()
                     statusTinggi = if (nilaistatus <= -3){
                         "Sangat Pendek"
